@@ -1,0 +1,204 @@
+/* ==========================================================================
+   STARS CSS - THIẾT LẬP CHI TIẾT PHONG CÁCH CHO HỆ THỐNG SAO NỀN NHẤP NHÁY
+   - Phân cấp 3 loại kích thước sao: Nhỏ (1px), Vừa (2px) và Lớn (3px) phát sáng lung linh
+   - Tạo hiệu ứng nhấp nháy liên tục (twinkle) với các chu kỳ nhấp nháy lệch pha khác nhau
+   ========================================================================== */
+
+/* Tạo sao lấp láy động bằng CSS */
+.stars-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Tạo 100 Sao Với JavaScript */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+}
+
+/* Kín Thước Sao Khác Nhau - Hiệu Ứng Sâu */
+.star.small {
+    width: 1px;
+    height: 1px;
+    opacity: 0.5;
+}
+
+.star.medium {
+    width: 2px;
+    height: 2px;
+    opacity: 0.7;
+}
+
+.star.large {
+    width: 3px;
+    height: 3px;
+    opacity: 0.9;
+}
+
+/* Hiệu Ứng Lấp Láy Với Thời Gian Khác Nhau */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes twinkle-slow {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes twinkle-fast {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Áp Dụng Hiệu Ứng Lấp Láy Với Tốc Độ Khác Nhau */
+.star {
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+.star:nth-child(odd) {
+    animation: twinkle 4s ease-in-out infinite;
+}
+
+.star:nth-child(3n) {
+    animation: twinkle-slow 5s ease-in-out infinite;
+}
+
+.star:nth-child(5n) {
+    animation: twinkle-fast 2s ease-in-out infinite;
+}
+
+/* Thêm Độnh Thời Gian Cho Mỗi Sao */
+.star:nth-child(1) { animation-delay: 0s; }
+.star:nth-child(2) { animation-delay: 0.2s; }
+.star:nth-child(3) { animation-delay: 0.4s; }
+.star:nth-child(4) { animation-delay: 0.6s; }
+.star:nth-child(5) { animation-delay: 0.8s; }
+.star:nth-child(6) { animation-delay: 1s; }
+.star:nth-child(7) { animation-delay: 1.2s; }
+.star:nth-child(8) { animation-delay: 1.4s; }
+.star:nth-child(9) { animation-delay: 1.6s; }
+.star:nth-child(10) { animation-delay: 1.8s; }
+.star:nth-child(11) { animation-delay: 2s; }
+.star:nth-child(12) { animation-delay: 2.2s; }
+.star:nth-child(13) { animation-delay: 2.4s; }
+.star:nth-child(14) { animation-delay: 2.6s; }
+.star:nth-child(15) { animation-delay: 2.8s; }
+.star:nth-child(16) { animation-delay: 3s; }
+.star:nth-child(17) { animation-delay: 3.2s; }
+.star:nth-child(18) { animation-delay: 3.4s; }
+.star:nth-child(19) { animation-delay: 3.6s; }
+.star:nth-child(20) { animation-delay: 3.8s; }
+.star:nth-child(21) { animation-delay: 4s; }
+.star:nth-child(22) { animation-delay: 4.2s; }
+.star:nth-child(23) { animation-delay: 4.4s; }
+.star:nth-child(24) { animation-delay: 4.6s; }
+.star:nth-child(25) { animation-delay: 4.8s; }
+.star:nth-child(26) { animation-delay: 5s; }
+.star:nth-child(27) { animation-delay: 5.2s; }
+.star:nth-child(28) { animation-delay: 5.4s; }
+.star:nth-child(29) { animation-delay: 5.6s; }
+.star:nth-child(30) { animation-delay: 5.8s; }
+.star:nth-child(31) { animation-delay: 6s; }
+.star:nth-child(32) { animation-delay: 6.2s; }
+.star:nth-child(33) { animation-delay: 6.4s; }
+.star:nth-child(34) { animation-delay: 6.6s; }
+.star:nth-child(35) { animation-delay: 6.8s; }
+.star:nth-child(36) { animation-delay: 7s; }
+.star:nth-child(37) { animation-delay: 7.2s; }
+.star:nth-child(38) { animation-delay: 7.4s; }
+.star:nth-child(39) { animation-delay: 7.6s; }
+.star:nth-child(40) { animation-delay: 7.8s; }
+.star:nth-child(41) { animation-delay: 8s; }
+.star:nth-child(42) { animation-delay: 8.2s; }
+.star:nth-child(43) { animation-delay: 8.4s; }
+.star:nth-child(44) { animation-delay: 8.6s; }
+.star:nth-child(45) { animation-delay: 8.8s; }
+.star:nth-child(46) { animation-delay: 9s; }
+.star:nth-child(47) { animation-delay: 9.2s; }
+.star:nth-child(48) { animation-delay: 9.4s; }
+.star:nth-child(49) { animation-delay: 9.6s; }
+.star:nth-child(50) { animation-delay: 9.8s; }
+.star:nth-child(51) { animation-delay: 10s; }
+.star:nth-child(52) { animation-delay: 10.2s; }
+.star:nth-child(53) { animation-delay: 10.4s; }
+.star:nth-child(54) { animation-delay: 10.6s; }
+.star:nth-child(55) { animation-delay: 10.8s; }
+.star:nth-child(56) { animation-delay: 11s; }
+.star:nth-child(57) { animation-delay: 11.2s; }
+.star:nth-child(58) { animation-delay: 11.4s; }
+.star:nth-child(59) { animation-delay: 11.6s; }
+.star:nth-child(60) { animation-delay: 11.8s; }
+.star:nth-child(61) { animation-delay: 12s; }
+.star:nth-child(62) { animation-delay: 12.2s; }
+.star:nth-child(63) { animation-delay: 12.4s; }
+.star:nth-child(64) { animation-delay: 12.6s; }
+.star:nth-child(65) { animation-delay: 12.8s; }
+.star:nth-child(66) { animation-delay: 13s; }
+.star:nth-child(67) { animation-delay: 13.2s; }
+.star:nth-child(68) { animation-delay: 13.4s; }
+.star:nth-child(69) { animation-delay: 13.6s; }
+.star:nth-child(70) { animation-delay: 13.8s; }
+.star:nth-child(71) { animation-delay: 14s; }
+.star:nth-child(72) { animation-delay: 14.2s; }
+.star:nth-child(73) { animation-delay: 14.4s; }
+.star:nth-child(74) { animation-delay: 14.6s; }
+.star:nth-child(75) { animation-delay: 14.8s; }
+.star:nth-child(76) { animation-delay: 15s; }
+.star:nth-child(77) { animation-delay: 15.2s; }
+.star:nth-child(78) { animation-delay: 15.4s; }
+.star:nth-child(79) { animation-delay: 15.6s; }
+.star:nth-child(80) { animation-delay: 15.8s; }
+.star:nth-child(81) { animation-delay: 16s; }
+.star:nth-child(82) { animation-delay: 16.2s; }
+.star:nth-child(83) { animation-delay: 16.4s; }
+.star:nth-child(84) { animation-delay: 16.6s; }
+.star:nth-child(85) { animation-delay: 16.8s; }
+.star:nth-child(86) { animation-delay: 17s; }
+.star:nth-child(87) { animation-delay: 17.2s; }
+.star:nth-child(88) { animation-delay: 17.4s; }
+.star:nth-child(89) { animation-delay: 17.6s; }
+.star:nth-child(90) { animation-delay: 17.8s; }
+.star:nth-child(91) { animation-delay: 18s; }
+.star:nth-child(92) { animation-delay: 18.2s; }
+.star:nth-child(93) { animation-delay: 18.4s; }
+.star:nth-child(94) { animation-delay: 18.6s; }
+.star:nth-child(95) { animation-delay: 18.8s; }
+.star:nth-child(96) { animation-delay: 19s; }
+.star:nth-child(97) { animation-delay: 19.2s; }
+.star:nth-child(98) { animation-delay: 19.4s; }
+.star:nth-child(99) { animation-delay: 19.6s; }
+.star:nth-child(100) { animation-delay: 19.8s; }
+
+/* Smooth color transitions for some stars */
+@keyframes twinkle-color {
+    0%, 100% {
+        opacity: 0.3;
+        color: #ffffff;
+    }
+    50% {
+        opacity: 1;
+        color: #b4e7ff;
+    }
+}
+
+/* Add color variation to some stars */
+.star:nth-child(7n) {
+    animation: twinkle-color 4s ease-in-out infinite;
+}

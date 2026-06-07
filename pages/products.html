@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kho Nhạc Cụ - DQL Music Instruments</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/container.css">
+    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/instruments.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/stickers.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <link rel="stylesheet" href="../css/stars.css">
+    <link rel="stylesheet" href="../css/sticky-navbar.css">
+    <link rel="stylesheet" href="../css/meteor.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/galaxy.css">
+</head>
+<!-- Phần thân <body> chứa toàn bộ cấu trúc giao diện trực quan hiển thị tới người dùng -->
+<body>
+    <!-- Hiệu ứng Thiên Thạch -->
+    <div class="meteor-field">
+        <span class="meteor m1"></span>
+        <span class="meteor m2"></span>
+        <span class="meteor m3"></span>
+        <span class="meteor m4"></span>
+        <span class="meteor m5"></span>
+        <span class="meteor m6"></span>
+    </div>
+    <!-- Stickers Trôi - Chủ Đề Galaxy -->
+    <div class="floating-stickers">
+        <div class="sticker sticker-1">🎵</div>
+        <div class="sticker sticker-2">🎶</div>
+        <div class="sticker sticker-3">🚀</div>
+        <div class="sticker sticker-4">🪐</div>
+        <div class="sticker sticker-5">🛸</div>
+        <div class="sticker sticker-6">🎸</div>
+        <div class="sticker sticker-7">🎹</div>
+        <div class="sticker sticker-8">🎤</div>
+        <div class="sticker sticker-9">🎧</div>
+        <div class="sticker sticker-10">⭐</div>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+        <!-- Thanh điều hướng cố định (Sticky Navbar) có nền kính mờ trong suốt cực đẹp và tự co nhỏ khi cuộn màn hình -->
+    <nav class="sticky-navbar" id="stickyNavbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-brand">
+                <img src="../hinhanh/hinhanhlogo/logo.png" alt="DQL Music" class="navbar-brand-icon">
+            </a>
+            
+                        <!-- Menu danh sách liên kết điều hướng dạng hàng ngang chính -->
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="navbar-item">
+                    <a href="../index.html" class="navbar-link">Trang Chủ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="products.html" class="navbar-link active">Kho Nhạc Cụ</a>
+                </li>
+                <li class="navbar-item">
+
+                    <a href="artists.html" class="navbar-link">Nghệ Sĩ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="contact.html" class="navbar-link">Liên Hệ</a>
+                </li>
+            </ul>
+
+            <div class="navbar-actions">
+                <a href="cart.html" class="navbar-action-btn" title="Giỏ hàng">🛒</a>
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Nền Sao Lấp Láy -->
+        <!-- Khung tạo nền sao lấp lánh (sẽ được điền ngẫu nhiên 100 ngôi sao bằng Javascript trong main.js) -->
+    <div class="stars-container"></div>
+
+    <!-- Tiêu Đề Trang -->
+        <!-- Phần đầu trang (Header Banner) giới thiệu tên thương hiệu và slogan cửa hàng -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">🎸 Kho Nhạc Cụ Chính Hãng</h1>
+            <p class="header-subtitle">Khám phá bộ sưu tập nhạc cụ đa dạng từ beginner đến professional</p>
+        </div>
+    </header>
+
+    <!-- Nội Dung Chính -->
+        <!-- Phần nội dung chính (Main Content Area) được bọc trong container giới hạn rộng tối đa 1200px -->
+    <main class="container">
+        <div class="products-wrapper">
+            <!-- Thanh Lọc Danh Mục -->
+            <aside class="products-sidebar">
+                <!-- Categories Section -->
+                <div class="sidebar-section" id="categories-section">
+                    <h3 class="section-title"> Danh Mục</h3>
+                    <div class="category-list">
+                        <a href="#" class="category-item active" data-category="all">
+                            <span class="category-icon"><img src="../hinhanh/hinhanhkho/all.png" alt="All"></span>
+                            <span>Tất Cả</span>
+                            <span class="category-count">25+</span>
+                        </a>
+                        <a href="#" class="category-item" data-category="string">
+                            <span class="category-icon"><img src="../hinhanh/hinhanhkho/guitar.png" alt="Guitar"></span>
+                            <span>Đàn Guitar</span>
+                            <span class="category-count">5</span>
+                        </a>
+                        <a href="#" class="category-item" data-category="keyboard">
+                            <span class="category-icon"><img src="../hinhanh/hinhanhkho/piano.png" alt="Piano"></span>
+                            <span>Đàn Piano</span>
+                            <span class="category-count">5</span>
+                        </a>
+                        <a href="#" class="category-item" data-category="wind">
+                            <span class="category-icon"><img src="../hinhanh/hinhanhkho/nhaccuhoi.png" alt="Wind"></span>
+                            <span>Nhạc Cụ Hơi</span>
+                            <span class="category-count">5</span>
+                        </a>
+                        <a href="#" class="category-item" data-category="percussion">
+                            <span class="category-icon"><img src="../hinhanh/hinhanhkho/nhaccugo.png" alt="Percussion"></span>
+                            <span>Nhạc Cụ Gõ</span>
+                            <span class="category-count">5</span>
+                        </a>
+                        <a href="#" class="category-item" data-category="accessories">
+                            <span class="category-icon"><img src="../hinhanh/hinhanhkho/phukiennhaccu.png" alt="Accessories"></span>
+                            <span>Phụ Kiện Nhạc Cụ</span>
+                            <span class="category-count">5</span>
+                        </a>
+                    </div>
+                </div>
+
+            </aside>
+
+            <!-- Lưới Sản Phẩm -->
+                        <!-- Cột bên phải (Main Area): Khu vực hiển thị thanh công cụ lọc và danh sách sản phẩm nhạc cụ -->
+            <div class="products-main">
+                <!-- Grid Hiển Thị Sản Phẩm -->
+                                <!-- Lưới hiển thị danh sách sản phẩm (Grid): Tự động co giãn theo số lượng sản phẩm cực đẹp -->
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\Yamaha F310.png" alt="Yamaha F310"></span>
+                            <span class="badge badge-hot">🔥 Hot</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Guitar Acoustic</div>
+                            <h3 class="product-name">Yamaha F310 - Đàn Guitar Acoustic Cổ Điển</h3>
+                            <p class="product-desc">Âm thanh sáng rõ, phù hợp với người mới bắt đầu</p>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-count">(128)</span>
+                            </div>
+                            <div class="product-price">2.890.000 ₫</div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                                <button class="btn-wishlist">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\Yamaha P-125.png" alt="Piano"></span>
+                            <span class="badge badge-new">🆕 New</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Piano Điện</div>
+                            <h3 class="product-name">Yamaha P-125 - Piano Điện Chuyên Nghiệp</h3>
+                            <p class="product-desc">88 phím nặng, âm thanh realism, ideal cho học sinh</p>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-count">(95)</span>
+                            </div>
+                            <div class="product-price">5.490.000 ₫</div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                                <button class="btn-wishlist">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\Roland V-Drums TD-17.png" alt="Drums"></span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Bộ Trống</div>
+                            <h3 class="product-name">Roland V-Drums TD-17 - Trống Điện</h3>
+                            <p class="product-desc">Âm thanh thực, cảm giác chơi tự nhiên</p>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐</span>
+                                <span class="rating-count">(72)</span>
+                            </div>
+                            <div class="product-price">8.900.000 ₫</div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                                <button class="btn-wishlist">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\Kala KA-SSTU Sopranino Ukulele.png" alt="Ukulele"></span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Ukulele</div>
+                            <h3 class="product-name">Kala KA-SSTU Sopranino Ukulele - Cao Cấp</h3>
+                            <p class="product-desc">Gỗ Spruce + Mahogany, âm thanh rõ ràng</p>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-count">(58)</span>
+                            </div>
+                            <div class="product-price">890.000 ₫</div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                                <button class="btn-wishlist">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\Stentor Student.png" alt="Violin"></span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Violin</div>
+                            <h3 class="product-name">Stentor Student I Violin - Người Mới Bắt Đầu</h3>
+                            <p class="product-desc">Gỗ Spruce nguyên khối, setup sẵn</p>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐</span>
+                                <span class="rating-count">(42)</span>
+                            </div>
+                            <div class="product-price">1.590.000 ₫</div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                                <button class="btn-wishlist">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\Yamaha YTR-2330 Trumpet.png" alt="Trumpet"></span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Nhạc Cụ Hơi</div>
+                            <h3 class="product-name">Yamaha YTR-2330 Trumpet - Nhạc Kèn</h3>
+                            <p class="product-desc">Đồng nguyên chất, valve mệnh danh</p>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-count">(67)</span>
+                            </div>
+                            <div class="product-price">3.200.000 ₫</div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                                <button class="btn-wishlist">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\Fender Stratocaster American Professional.png" alt="Electric Guitar"></span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Guitar Electric</div>
+                            <h3 class="product-name">Fender Stratocaster American Professional</h3>
+                            <p class="product-desc">Âm thanh iconic, design lendary</p>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-count">(203)</span>
+                            </div>
+                            <div class="product-price">15.900.000 ₫</div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                                <button class="btn-wishlist">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\Korg EK-50.png" alt="Keyboard"></span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Keyboard 61 Phím</div>
+                            <h3 class="product-name">Korg EK-50 - Keyboard Chuyên Nghiệp</h3>
+                            <p class="product-desc">1000+ tiếng âm, ghi âm 7 track</p>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐</span>
+                                <span class="rating-count">(45)</span>
+                            </div>
+                            <div class="product-price">4.500.000 ₫</div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                                <button class="btn-wishlist">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\Cable Jack XLR Pro Studio 6m.png" alt="Cable"></span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Phụ Kiện</div>
+                            <h3 class="product-name">Cable Jack XLR Pro Studio 6m</h3>
+                            <p class="product-desc">Shielded, balanced, giảm nhiễu</p>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-count">(234)</span>
+                            </div>
+                            <div class="product-price">450.000 ₫</div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                                <button class="btn-wishlist">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 10 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\Day Dan Guitar Set 12pcs.png" alt="Guitar Strings"></span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Phụ Kiện</div>
+                            <h3 class="product-name">Dây Đàn Guitar Set 12pcs - Premium</h3>
+                            <p class="product-desc">Dây Nickel plated, kéo dài tuổi thọ</p>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐</span>
+                                <span class="rating-count">(156)</span>
+                            </div>
+                            <div class="product-price">189.000 ₫</div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                                <button class="btn-wishlist">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 11 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\Mic Thu Am AT4040.png" alt="Microphone"></span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Phụ Kiện</div>
+                            <h3 class="product-name">Mic Thu Âm AT4040 - Studio Condenser</h3>
+                            <p class="product-desc">Frequency response 20Hz-20kHz</p>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-count">(89)</span>
+                            </div>
+                            <div class="product-price">3.890.000 ₫</div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                                <button class="btn-wishlist">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 12 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\chandan.png" alt="Stand"></span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Phụ Kiện</div>
+                            <h3 class="product-name">Stand Chân Đàn Điều Chỉnh Độ Cao</h3>
+                            <p class="product-desc">Inox chắc chắn, điều chỉnh 55-85cm</p>
+                            <div class="product-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-count">(112)</span>
+                            </div>
+                            <div class="product-price">590.000 ₫</div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                                <button class="btn-wishlist">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                                <!-- Bộ phân trang (Pagination): Chuyển đổi qua lại giữa các trang sản phẩm -->
+                <div class="pagination">
+                    <button class="page-btn">← Trước</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">...</button>
+                    <button class="page-btn">10</button>
+                    <button class="page-btn">Sau →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products Section -->
+        <section class="related-section">
+            <h2 class="related-title">📦 Các Mục Liên Quan</h2>
+            <p class="related-subtitle">Phụ Kiện & Sản Phẩm Bán Kèm - Hoàn Thiện Bộ Setup Của Bạn</p>
+            
+            <div class="related-grid">
+                <!-- Related 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\sachhuongdan.png" alt="Book"></span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Sách Học</div>
+                        <h3 class="product-name">Sách Hướng Dẫn Guitar - Toàn Tập</h3>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(178)</span>
+                        </div>
+                        <div class="product-price">199.000 ₫</div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                            <button class="btn-wishlist">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\tainghe.png" alt="Headphones"></span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Tai Nghe</div>
+                        <h3 class="product-name">Tai Nghe Studio Monitoring Sony</h3>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(224)</span>
+                        </div>
+                        <div class="product-price">2.490.000 ₫</div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                            <button class="btn-wishlist">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\Mic Karaoke.png" alt="Microphone"></span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Âm Thanh</div>
+                        <h3 class="product-name">Mic Karaoke Không Dây</h3>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐</span>
+                            <span class="rating-count">(145)</span>
+                        </div>
+                        <div class="product-price">890.000 ₫</div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                            <button class="btn-wishlist">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-emoji"><img src="..\hinhanh\hinhanhkho\giadenhac.png" alt="Music Sheet"></span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Bảng Ghi Chú</div>
+                        <h3 class="product-name">Giá Để Nhạc - Chân Chắc Chắn</h3>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(267)</span>
+                        </div>
+                        <div class="product-price">299.000 ₫</div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">🛒 Thêm Vào Giỏ</button>
+                            <button class="btn-wishlist">❤️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Product Detail Modal -->
+        <!-- Hộp thoại Modal xem chi tiết sản phẩm ẩn mặc định (Sẽ hiển thị đè màn hình khi click vào thẻ sản phẩm) -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <div class="modal-image" id="modalImage">
+                    <img id="modalImageImg" src="" alt="Product Image">
+                </div>
+                <div class="modal-info">
+                    <div class="modal-category" id="modalCategory">Nhạc Cụ</div>
+                    <h2 id="modalTitle">Tên Sản Phẩm</h2>
+                    <div class="modal-rating" id="modalRating">⭐⭐⭐⭐⭐ (100)</div>
+                    <div class="modal-price" id="modalPrice">0 ₫</div>
+                    <div class="modal-description" id="modalDesc">Mô tả sản phẩm</div>
+                    <div class="modal-specs">
+                        <h4>📋 Thông Tin Chi Tiết</h4>
+                        <p id="modalSpecs">Tình trạng: Mới 100% | Bảo hành: 2 năm | Xuất xứ: Nhật Bản</p>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="modal-btn modal-btn-cart" id="modalAddCart">🛒 Thêm Vào Giỏ</button>
+                        <button class="modal-btn modal-btn-wishlist" id="modalWishlist">❤️ Yêu Thích</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+        <!-- Phần chân trang (Footer) chứa thông tin bản quyền và liên kết bổ sung, sử dụng nền kính tối -->
+    <footer class="footer">
+        <p>&copy; 2026 DQL Music Instruments | Khám phá âm nhạc không giới hạn</p>
+    </footer>
+
+        <!-- Nạp thư viện tiện ích dùng chung (Hiển thị thông báo toast, xử lý giá, giỏ hàng...) -->
+    <script src="../js/utils.js"></script>
+        <!-- Nạp mã xử lý sự kiện đóng mở menu và dính thanh điều hướng khi cuộn trang -->
+    <script src="../js/navbar.js"></script>
+        <!-- Nạp mã xử lý mở hộp thoại chi tiết sản phẩm, lọc chuyên mục và tiêm hiệu ứng ngân hà 3D -->
+    <script src="../js/products.js"></script>
+        <!-- Nạp mã xử lý hiệu ứng sao lấp lánh nền và các hoạt ảnh cuộn trang mượt mà -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
+

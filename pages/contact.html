@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - DQL Music Instruments</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/container.css">
+    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/stickers.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/stars.css">
+    <link rel="stylesheet" href="../css/sticky-navbar.css">
+    <link rel="stylesheet" href="../css/meteor.css">
+</head>
+<!-- Phần thân <body> chứa toàn bộ cấu trúc giao diện trực quan hiển thị tới người dùng -->
+<body>
+    <!-- Hiệu ứng Thiên Thạch -->
+    <div class="meteor-field">
+        <span class="meteor m1"></span>
+        <span class="meteor m2"></span>
+        <span class="meteor m3"></span>
+        <span class="meteor m4"></span>
+        <span class="meteor m5"></span>
+        <span class="meteor m6"></span>
+    </div>
+    <!-- Stickers Trôi - Chủ Đề Galaxy -->
+    <div class="floating-stickers">
+        <div class="sticker sticker-1">🎵</div>
+        <div class="sticker sticker-2">🎶</div>
+        <div class="sticker sticker-3">🚀</div>
+        <div class="sticker sticker-4">🪐</div>
+        <div class="sticker sticker-5">🛸</div>
+        <div class="sticker sticker-6">🎸</div>
+        <div class="sticker sticker-7">🎹</div>
+        <div class="sticker sticker-8">🎤</div>
+        <div class="sticker sticker-9">🎧</div>
+        <div class="sticker sticker-10">⭐</div>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+        <!-- Thanh điều hướng cố định (Sticky Navbar) có nền kính mờ trong suốt cực đẹp và tự co nhỏ khi cuộn màn hình -->
+    <nav class="sticky-navbar" id="stickyNavbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-brand">
+                <img src="../hinhanh/hinhanhlogo/logo.png" alt="DQL Music" class="navbar-brand-icon">
+            </a>
+            
+                        <!-- Menu danh sách liên kết điều hướng dạng hàng ngang chính -->
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="navbar-item">
+                    <a href="../index.html" class="navbar-link">Trang Chủ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="products.html" class="navbar-link">Kho Nhạc Cụ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="artists.html" class="navbar-link">Nghệ Sĩ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="contact.html" class="navbar-link active">Liên Hệ</a>
+                </li>
+            </ul>
+
+            <div class="navbar-actions">
+                <a href="cart.html" class="navbar-action-btn" title="Giỏ hàng">🛒</a>
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Nền Sao Lấp Láy -->
+        <!-- Khung tạo nền sao lấp lánh (sẽ được điền ngẫu nhiên 100 ngôi sao bằng Javascript trong main.js) -->
+    <div class="stars-container"></div>
+
+    <!-- Tiêu Đề Trang -->
+        <!-- Phần đầu trang (Header Banner) giới thiệu tên thương hiệu và slogan cửa hàng -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">📞 Liên Hệ Với Chúng Tôi</h1>
+            <p class="header-subtitle">Tìm địa chỉ và thông tin liên hệ của cửa hàng DQL Music</p>
+        </div>
+    </header>
+
+    <!-- Nội Dung Chính -->
+    <main class="container contact-container">
+        <div class="contact-wrapper">
+            <!-- Bản Đồ Google Maps -->
+            <div class="map-section glass-card">
+                <h2 class="map-title">📍 Vị Trí Của Chúng Tôi</h2>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.8951493426234!2d105.81906!3d21.008156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135acb3d47d8461%3A0xd8d20bdb36c3e56c!2s68%20Nguy%E1%BB%85n%20Ch%C3%AD%20Thanh%2C%20%C4%90%E1%BB%91ng%20%C4%90a%2C%20Ha%20Noi!5e0!3m2!1svi!2svn!4v1234567890"
+                        width="100%" 
+                        height="500" 
+                        style="border:none; border-radius: 15px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
+                <p class="map-info">
+                    <a href="https://maps.app.goo.gl/Ev92NfSHVVXNEVkYA" target="_blank" class="map-link">
+                        🗺️ Mở trong Google Maps
+                    </a>
+                </p>
+            </div>
+
+            <!-- Thông Tin Liên Hệ -->
+            <div class="contact-info-section">
+                <div class="info-card glass-card">
+                    <h3 class="info-title">📍 Địa Chỉ</h3>
+                    <p class="info-content">68 Nguyễn Chí Thanh, Đống Đa, Hà Nội, Việt Nam</p>
+                </div>
+
+                <div class="info-card glass-card">
+                    <h3 class="info-title">📞 Điện Thoại</h3>
+                    <p class="info-content">+84 373558545</p>
+                </div>
+
+                <div class="info-card glass-card">
+                    <h3 class="info-title">📧 Email</h3>
+                    <p class="info-content">2574820007@hpn.edu.vn</p>
+                </div>
+
+                <div class="info-card glass-card">
+                    <h3 class="info-title">⏰ Giờ Làm Việc</h3>
+                    <p class="info-content">Thứ 2 - Thứ 7: 08:00 - 20:00</p>
+                </div>
+
+                <div class="info-card glass-card">
+                    <h3 class="info-title">🌐 Mạng Xã Hội</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+        <!-- Phần chân trang (Footer) chứa thông tin bản quyền và liên kết bổ sung, sử dụng nền kính tối -->
+    <footer class="footer">
+        <p>&copy; 2026 DQL Music Instruments | Khám phá âm nhạc không giới hạn</p>
+    </footer>
+
+        <!-- Nạp thư viện tiện ích dùng chung (Hiển thị thông báo toast, xử lý giá, giỏ hàng...) -->
+    <script src="../js/utils.js"></script>
+        <!-- Nạp mã xử lý sự kiện đóng mở menu và dính thanh điều hướng khi cuộn trang -->
+    <script src="../js/navbar.js"></script>
+        <!-- Nạp mã xử lý hiệu ứng sao lấp lánh nền và các hoạt ảnh cuộn trang mượt mà -->
+    <script src="../js/main.js"></script>
+
+    <!-- ===== STICKY NAVBAR JAVASCRIPT ===== -->
+    <script src="../js/contact.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,126 @@
+/* ==========================================================================
+   CARDS CSS - ĐỊNH NGHĨA THẺ NỀN KÍNH THUỶ TINH (GLASSMORPHISM CARDS)
+   - Nền kính mờ đục suốt với kỹ thuật backdrop-filter blur
+   - Viền bán trong suốt màu tím lung linh và bóng đổ sâu 3D
+   ========================================================================== */
+
+/* ========== THỊ NHẠC CỤ (GLASSMORPHISM) ========== */
+/* Thẻ mô tả nhạc cụ chính: Thiết lập chiều cao tối thiểu và phân bố các khối bên trong giãn đều hai đầu */
+.instrument-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 8px 32px rgba(138, 43, 226, 0.1),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 450px;
+}
+
+/* Hiệu Ứng Lấp Lói Trên ThỊ */
+.instrument-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.05) 50%,
+        transparent 70%
+    );
+    animation: shimmer 3s infinite;
+    pointer-events: none;
+}
+
+.instrument-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(138, 43, 226, 0.6);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 
+        0 20px 40px rgba(138, 43, 226, 0.2),
+        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+/* Nội Dung ThỊ */
+/* Biểu tượng / Khung ảnh nhạc cụ trên trang chủ */
+.card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.card-icon img {
+    max-width: 170px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Tên nhạc cụ chính */
+.card-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #00d4ff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* Mô tả giới thiệu nhạc cụ, tự động giãn nở kéo thẻ có độ cao bằng nhau */
+.card-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #b0b0d0;
+    margin-bottom: 20px;
+    min-height: 100px;
+    flex: 1;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(138, 43, 226, 0.2);
+    margin-top: auto;
+}
+
+.detail-item {
+    font-size: 0.9rem;
+    color: #b24bff;
+    font-weight: 500;
+}
+
+/* ========== GLASS CARD STYLING ========== */
+.glass-card {
+    background: rgba(30, 20, 60, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 20px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card:hover {
+    background: rgba(30, 20, 60, 0.6);
+    border-color: rgba(168, 85, 247, 0.6);
+    box-shadow: 0 12px 40px rgba(168, 85, 247, 0.2);
+    transform: translateY(-5px);
+}

@@ -1,0 +1,45 @@
+/* ==========================================================================
+   ANIMATIONS CSS - ĐỊNH NGHĨA CÁC HOẠT ẢNH HOẠT HỌA CHUNG TOÀN HỆ THỐNG
+   - glow: văn bản phát sáng lấp lánh
+   - float: phần tử bay lơ lửng bồng bềnh
+   - shimmer & shine: ánh sáng quét qua các nút bấm tạo vẻ sang trọng
+   ========================================================================== */
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(138, 43, 226, 0.8);
+    }
+}
+
+/* HOẠT ẢNH TRÔI NỔI (FLOAT) BỒNG BỀNH TỰ NHIÊN */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-40px) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-20px) rotate(3deg);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}

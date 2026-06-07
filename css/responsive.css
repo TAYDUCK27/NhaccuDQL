@@ -1,0 +1,223 @@
+/* ==========================================================================
+   RESPONSIVE CSS - HỆ THỐNG CẢI THIỆN ĐÁP ỨNG TRÊN MỌI THIẾT BỊ DI ĐỘNG (MEDIA QUERIES)
+   - Tinh chỉnh kích thước chữ, khoảng cách đệm trên iPad, Máy tính bảng (max-width: 1024px)
+   - Chuyển thanh điều hướng thành dạng menu Hamburger trên điện thoại di động (max-width: 768px)
+   - Tối ưu hóa lưới sản phẩm hiển thị 2 cột vừa vặn trên màn hình dọc điện thoại nhỏ
+   ========================================================================== */
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2.5rem;
+    }
+
+    .header-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Lưới hiển thị 3 thẻ giới thiệu nhạc cụ chính tại trang chủ */
+.instruments-section {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    /* Thẻ mô tả nhạc cụ chính: Thiết lập chiều cao tối thiểu và phân bố các khối bên trong giãn đều hai đầu */
+.instrument-card {
+        padding: 20px;
+    }
+
+    /* Biểu tượng / Khung ảnh nhạc cụ trên trang chủ */
+.card-icon {
+        font-size: 3rem;
+    }
+
+    /* Tên nhạc cụ chính */
+.card-title {
+        font-size: 1.5rem;
+    }
+
+    /* Mô tả giới thiệu nhạc cụ, tự động giãn nở kéo thẻ có độ cao bằng nhau */
+.card-description {
+        font-size: 0.9rem;
+    }
+
+    /* Contact Responsive */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-section {
+        padding: 25px;
+    }
+
+    .contact-info-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .info-card {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    /* Cart Responsive */
+    .cart-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-summary-section {
+        position: static;
+    }
+
+    .cart-item {
+        grid-template-columns: 80px 1fr 80px 80px;
+        gap: 15px;
+    }
+
+    .cart-item-remove {
+        grid-column: 1 / -1;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    /* Checkout Responsive */
+    .checkout-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-summary-section {
+        position: static;
+    }
+
+    .payment-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-step {
+        padding: 20px;
+    }
+
+    /* Sticker Responsive */
+    /* Định dạng chung nhãn dán: cỡ chữ lớn 3rem, bóng sáng lung linh màu tím, không cho bôi đen chữ */
+.sticker {
+        font-size: 2rem;
+        opacity: 0.4;
+    }
+    
+    .sticker-1 { top: 15%; left: 5%; }
+    .sticker-2 { top: 25%; right: 5%; }
+    .sticker-3 { top: 45%; left: 10%; display: none; }
+    .sticker-4 { top: 35%; right: 10%; display: none; }
+    .sticker-5 { top: 65%; left: 5%; }
+    .sticker-6 { top: 55%; right: 5%; }
+    .sticker-7 { display: none; }
+    .sticker-8 { display: none; }
+    .sticker-9 { display: none; }
+    .sticker-10 { display: none; }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+    .header {
+        padding: 40px 15px 30px;
+        margin-bottom: 25px;
+    }
+
+    .header-title {
+        font-size: 1.8rem;
+    }
+
+    .header-subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* Khung bố cục chính căn giữa trang web, giới hạn chiều rộng 1200px để giao diện hiển thị gọn gàng */
+.container {
+        padding: 0 15px 40px;
+    }
+
+    /* Lưới hiển thị 3 thẻ giới thiệu nhạc cụ chính tại trang chủ */
+.instruments-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Thẻ mô tả nhạc cụ chính: Thiết lập chiều cao tối thiểu và phân bố các khối bên trong giãn đều hai đầu */
+.instrument-card {
+        padding: 18px;
+    }
+
+    /* Biểu tượng / Khung ảnh nhạc cụ trên trang chủ */
+.card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    /* Tên nhạc cụ chính */
+.card-title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    /* Mô tả giới thiệu nhạc cụ, tự động giãn nở kéo thẻ có độ cao bằng nhau */
+.card-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+
+    .detail-item {
+        font-size: 0.8rem;
+    }
+
+    /* Chân trang web với nền thủy tinh tối mờ, viền trên sáng màu tím dạ quang, chữ hiển thị sắc nét căn giữa */
+.footer {
+        padding: 20px 15px;
+        font-size: 0.85rem;
+    }
+
+    /* Cart Mobile */
+    .cart-item {
+        grid-template-columns: 70px 1fr;
+        gap: 15px;
+    }
+
+    .cart-item-price,
+    .cart-item-quantity,
+    .cart-item-subtotal,
+    .cart-item-remove {
+        grid-column: 1 / -1;
+    }
+
+    .cart-item-price::before {
+        content: "Giá: ";
+        color: #9d9dff;
+    }
+
+    .cart-item-subtotal::before {
+        content: "Tổng: ";
+        color: #9d9dff;
+    }
+
+    /* Checkout Mobile */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Large screens (1400px+) */
+@media (min-width: 1400px) {
+    /* Khung bố cục chính căn giữa trang web, giới hạn chiều rộng 1200px để giao diện hiển thị gọn gàng */
+.container {
+        max-width: 1400px;
+    }
+
+    /* Lưới hiển thị 3 thẻ giới thiệu nhạc cụ chính tại trang chủ */
+.instruments-section {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

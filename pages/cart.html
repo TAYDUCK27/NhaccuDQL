@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng - DQL Music Instruments</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/container.css">
+    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/stickers.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/stars.css">
+    <link rel="stylesheet" href="../css/sticky-navbar.css">
+    <link rel="stylesheet" href="../css/meteor.css">
+</head>
+<body>
+    <!-- Hiệu ứng Thiên Thạch -->
+    <div class="meteor-field">
+        <span class="meteor m1"></span>
+        <span class="meteor m2"></span>
+        <span class="meteor m3"></span>
+        <span class="meteor m4"></span>
+        <span class="meteor m5"></span>
+        <span class="meteor m6"></span>
+    </div>
+    <!-- Stickers Trôi - Chủ Đề Galaxy -->
+    <div class="floating-stickers">
+        <div class="sticker sticker-1">🎵</div>
+        <div class="sticker sticker-2">🎶</div>
+        <div class="sticker sticker-3">🚀</div>
+        <div class="sticker sticker-4">🪐</div>
+        <div class="sticker sticker-5">🛸</div>
+        <div class="sticker sticker-6">🎸</div>
+        <div class="sticker sticker-7">🎹</div>
+        <div class="sticker sticker-8">🎤</div>
+        <div class="sticker sticker-9">🎧</div>
+        <div class="sticker sticker-10">⭐</div>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+        <!-- Thanh điều hướng cố định (Sticky Navbar) có nền kính mờ trong suốt cực đẹp và tự co nhỏ khi cuộn màn hình -->
+    <nav class="sticky-navbar" id="stickyNavbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-brand">
+                <img src="../hinhanh/hinhanhlogo/logo.png" alt="DQL Music" class="navbar-brand-icon">
+            </a>
+            
+                        <!-- Menu danh sách liên kết điều hướng dạng hàng ngang chính -->
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="navbar-item">
+                    <a href="../index.html" class="navbar-link">Trang Chủ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="products.html" class="navbar-link">Kho Nhạc Cụ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="artists.html" class="navbar-link">Nghệ Sĩ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="contact.html" class="navbar-link">Liên Hệ</a>
+                </li>
+            </ul>
+
+            <div class="navbar-actions">
+                <a href="cart.html" class="navbar-action-btn active" title="Giỏ hàng">🛒</a>
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Nền Sao Lấp Láy -->
+        <!-- Khung tạo nền sao lấp lánh (sẽ được điền ngẫu nhiên 100 ngôi sao bằng Javascript trong main.js) -->
+    <div class="stars-container"></div>
+
+    <!-- Tiêu Đề Trang -->
+        <!-- Phần đầu trang (Header Banner) giới thiệu tên thương hiệu và slogan cửa hàng -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">🛒 Giỏ Hàng Của Tôi</h1>
+            <p class="header-subtitle">Kiểm tra các nhạc cụ yêu thích của bạn</p>
+        </div>
+    </header>
+
+    <!-- Nội Dung Chính -->
+        <!-- Phần nội dung chính (Main Content Area) được bọc trong container giới hạn rộng tối đa 1200px -->
+    <main class="container">
+                <!-- Bố cục giỏ hàng: danh sách các sản phẩm ở bên trái và tóm tắt thanh toán ở bên phải -->
+        <div class="cart-wrapper">
+            <!-- Danh Sách Sản Phẩm Giỏ -->
+            <div class="cart-items-section">
+                <h2 class="cart-section-title">📦 Sản Phẩm Trong Giỏ</h2>
+                
+                <div class="cart-items-container" id="cartItemsContainer">
+                    <!-- Cart items will be loaded from localStorage -->
+                </div>
+
+                <div class="empty-cart-message" style="display: block;">
+                    <p>😔 Giỏ hàng trống. Hãy thêm các nhạc cụ yêu thích vào giỏ!</p>
+                    <a href="products.html" class="btn-continue-shopping">⬅️ Tiếp Tục Mua Hàng</a>
+                    <button onclick="clearOldCart()" style="margin-top: 10px; padding: 10px 20px; background: #ff4444; color: white; border: none; border-radius: 8px; cursor: pointer;">🗑️ Xóa Dữ Liệu Cũ</button>
+                </div>
+            </div>
+
+            <!-- Tóm Tắt Đơn Hàng -->
+            <div class="cart-summary-section" style="display: none;">
+                <div class="cart-summary-card">
+                    <h2 class="summary-title">💎 Tóm Tắt Đơn Hàng</h2>
+
+                    <div class="summary-row">
+                        <span class="summary-label">Tổng cộng (3 sản phẩm):</span>
+                        <span class="summary-value">17.740.000 ₫</span>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="cart-actions">
+                        <a href="checkout.html" class="btn-checkout">
+                            <span class="btn-glow"></span>
+                            ✨ Tiến Hành Thanh Toán
+                        </a>
+                        <a href="products.html" class="btn-continue-shopping">
+                            ⬅️ Tiếp Tục Mua Hàng
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="trust-section">
+                        <div class="trust-item">
+                            <span class="trust-icon">🔒</span>
+                            <span class="trust-text">Thanh toán an toàn</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">📦</span>
+                            <span class="trust-text">Giao hàng nhanh</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">↩️</span>
+                            <span class="trust-text">Hoàn tiền 30 ngày</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+        <!-- Phần chân trang (Footer) chứa thông tin bản quyền và liên kết bổ sung, sử dụng nền kính tối -->
+    <footer class="footer">
+        <p>&copy; 2026 DQL Music Instruments | Khám phá âm nhạc không giới hạn</p>
+    </footer>
+
+        <!-- Nạp thư viện tiện ích dùng chung (Hiển thị thông báo toast, xử lý giá, giỏ hàng...) -->
+    <script src="../js/utils.js"></script>
+        <!-- Nạp mã xử lý sự kiện đóng mở menu và dính thanh điều hướng khi cuộn trang -->
+    <script src="../js/navbar.js"></script>
+        <!-- Nạp mã xử lý hiệu ứng sao lấp lánh nền và các hoạt ảnh cuộn trang mượt mà -->
+    <script src="../js/main.js"></script>
+        <!-- Nạp mã xử lý giỏ hàng: liệt kê sản phẩm, thay đổi số lượng, tính tổng tiền hóa đơn -->
+    <script src="../js/cart.js"></script>
+</body>
+</html>
+
+

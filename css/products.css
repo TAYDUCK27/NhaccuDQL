@@ -1,0 +1,728 @@
+﻿/* ==========================================================================
+   PRODUCTS CSS - TOÀN BỘ PHONG CÁCH CHO TRANG KHO SẢN PHẨM (products.html)
+   - Thiết kế bộ khung 2 cột: Sidebar lọc chuyên sâu bên trái & Lưới danh sách bên phải
+   - Phong cách Sidebar gồm: Chọn danh mục nhạc cụ, nhập khoảng giá và tích chọn xếp hạng sao
+   - Thiết kế thẻ hiển thị chi tiết sản phẩm, nhãn dán Hot/New, hiệu ứng di chuột chuyển động tinh tế
+   - Phân trang, footer 3 cột chuyên nghiệp
+   ========================================================================== */
+/* ============================================
+   BỒ CụC TRĂNG SẢN PHẨM
+   ============================================ */
+
+/* Khung bao bọc chính cho danh mục sản phẩm (Chia thành 2 cột: Cột lọc bên trái và Lưới sản phẩm bên phải) */
+.products-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* ============================================
+   THANH Lọc & DANH MỤC
+   ============================================ */
+
+.products-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-section,
+.filter-section {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(15px);
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #00d4ff;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(138, 43, 226, 0.3);
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   DANH MỤC SảN PHẨM
+   ============================================ */
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #9d9dff;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.category-item:hover {
+    background: rgba(138, 43, 226, 0.2);
+    border-color: #00d4ff;
+    color: #00d4ff;
+    transform: translateX(4px);
+}
+
+.category-item.active {
+    background: rgba(138, 43, 226, 0.3);
+    border-color: #00d4ff;
+    color: #00d4ff;
+    font-weight: 600;
+}
+
+.category-icon {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+
+.category-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.category-count {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: #b24bff;
+    padding: 2px 6px;
+    background: rgba(138, 43, 226, 0.2);
+    border-radius: 10px;
+}
+
+/* ============================================
+   Lọc GIÁ TẰA
+   ============================================ */
+
+.price-range {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.price-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(138, 43, 226, 0.5);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.price-input::placeholder {
+    color: #9d9dff;
+}
+
+.price-input:focus {
+    outline: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #00d4ff;
+}
+
+.filter-btn {
+    background: linear-gradient(135deg, #00d4ff, #b24bff);
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+}
+
+/* ============================================
+   Lọc ĐÁNH GIÁ
+   ============================================ */
+
+.rating-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rating-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.rating-item:hover {
+    background: rgba(138, 43, 226, 0.2);
+    border-color: #00d4ff;
+}
+
+.rating-item input[type="checkbox"] {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    accent-color: #00d4ff;
+}
+
+.rating-label {
+    font-size: 0.9rem;
+    color: #9d9dff;
+    cursor: pointer;
+}
+
+/* ============================================
+   KHU VỰC CHÍNH SảN PHẨM
+   ============================================ */
+
+.products-main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ============================================
+   THANH CÔNG CỤ
+   ============================================ */
+
+.products-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+}
+
+.products-count {
+    font-size: 0.95rem;
+    color: #9d9dff;
+}
+
+.products-sort {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.products-sort label {
+    color: #9d9dff;
+    font-size: 0.9rem;
+}
+
+.sort-select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(138, 43, 226, 0.5);
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sort-select:hover,
+.sort-select:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #00d4ff;
+}
+
+.sort-select option {
+    background: #1a0a3a;
+    color: #e0e0e0;
+}
+
+/* ============================================
+   Lưới SảN PHẨM
+   ============================================ */
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* ============================================
+   THỊ SảN PHẨM
+   ============================================ */
+
+.product-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    backdrop-filter: blur(15px);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: #00d4ff;
+    box-shadow: 0 12px 40px rgba(138, 43, 226, 0.3),
+                0 0 20px rgba(0, 212, 255, 0.2);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* ============================================
+   HÍNH ẢNH SảN PHẨM
+   ============================================ */
+
+.product-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(0, 212, 255, 0.15));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.product-emoji {
+    font-size: 3rem;
+    transition: transform 0.4s ease;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ảnh sản phẩm thật: Tự co giãn tỉ lệ phù hợp, tích hợp bóng mờ xanh cyan lung linh và chuyển động mượt */
+.product-emoji img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+}
+
+.product-card:hover .product-emoji {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* ============================================
+   BADGES
+   ============================================ */
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #00d4ff;
+    border: 1px solid #00d4ff;
+}
+
+.badge-hot {
+    background: rgba(255, 0, 80, 0.8);
+    color: #fff;
+    border-color: #ff0050;
+}
+
+.badge-new {
+    background: rgba(0, 200, 100, 0.8);
+    color: #fff;
+    border-color: #00c864;
+}
+
+/* ============================================
+   PRODUCT INFO
+   ============================================ */
+
+.product-info {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-category {
+    font-size: 0.75rem;
+    color: #00d4ff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.product-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    display: -webkit-box;
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-desc {
+    font-size: 0.8rem;
+    color: #9d9dff;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ============================================
+   PRODUCT RATING
+   ============================================ */
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+}
+
+.stars {
+    color: #ffc107;
+}
+
+.rating-count {
+    color: #9d9dff;
+}
+
+/* ============================================
+   PRODUCT PRICE
+   ============================================ */
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #00d4ff, #b24bff);
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 12px;
+}
+
+/* ============================================
+   PRODUCT ACTIONS
+   ============================================ */
+
+.product-actions {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+}
+
+.btn-add-cart {
+    background: linear-gradient(135deg, #00d4ff, #b24bff);
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-add-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+}
+
+.btn-wishlist {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(138, 43, 226, 0.5);
+    color: #ff0050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-wishlist:hover {
+    background: #ff0050;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.page-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    color: #9d9dff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.page-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #00d4ff, #b24bff);
+    border-color: #00d4ff;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.page-btn.active {
+    background: linear-gradient(135deg, #00d4ff, #b24bff);
+    border-color: #00d4ff;
+    color: #fff;
+}
+
+.page-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* ============================================
+   RELATED PRODUCTS SECTION
+   ============================================ */
+
+.related-section {
+    margin-top: 60px;
+    padding-top: 60px;
+    border-top: 2px solid rgba(138, 43, 226, 0.3);
+}
+
+.related-title {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00d4ff, #b24bff, #00d4ff);
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.related-subtitle {
+    text-align: center;
+    color: #9d9dff;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(264px, 1fr));
+    gap: 20px;
+}
+
+/* Ảnh sản phẩm thật: Tự co giãn tỉ lệ phù hợp, tích hợp bóng mờ xanh cyan lung linh và chuyển động mượt */
+.related-grid .product-emoji img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+/* Chân trang web với nền thủy tinh tối mờ, viền trên sáng màu tím dạ quang, chữ hiển thị sắc nét căn giữa */
+.footer {
+    background: rgba(26, 10, 58, 0.9);
+    border-top: 1px solid rgba(138, 43, 226, 0.3);
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-col h4 {
+    color: #00d4ff;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col p,
+.footer-col ul li {
+    color: #9d9dff;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col a {
+    color: #9d9dff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #00d4ff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(138, 43, 226, 0.3);
+    color: #9d9dff;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .products-wrapper {
+       /* Giữ bố cục 2 cột (danh mục bên trái, lưới sản phẩm bên phải) với độ rộng sidebar là 240px */
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .products-sidebar {
+      /* Giữ nguyên bố cục cột đứng của danh mục, không chuyển thành hàng ngang trên máy tính bảng */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    .related-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 40px 15px 30px;
+        margin-top: 70px;
+    }
+
+    .header-title {
+        font-size: 2rem;
+    }
+
+    /* Khung bố cục chính căn giữa trang web, giới hạn chiều rộng 1200px để giao diện hiển thị gọn gàng */
+    .container {
+        padding: 0 15px 40px;
+    }
+
+    .products-sidebar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .sidebar-section,
+    .filter-section {
+        padding: 15px;
+    }
+
+    .products-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .products-sort {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .sort-select {
+        width: 100%;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .product-card {
+        border-radius: 12px;
+    }
+
+    /* Khung ảnh sản phẩm: Nền gradient sáng vũ trụ, ẩn các phần bị tràn viền */
+    .product-image {
+        aspect-ratio: 1;
+    }
+
+    .product-emoji {
+        font-size: 2.5rem;
+    }
+
+    .product-info {
+        padding: 15px;
+    }
+}

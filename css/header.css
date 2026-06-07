@@ -1,0 +1,43 @@
+/* ==========================================================================
+   HEADER CSS - PHONG CÁCH KHU VỰC TIÊU ĐỀ ĐẦU TRANG (HEADER BANNER)
+   - Đặt chiều cao banner phù hợp, chữ tiêu đề lớn DQL Music Instruments
+   - Phụ đề chuyển sắc gradient lung linh rực rỡ thu hút người xem
+   ========================================================================== */
+
+.header {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(180deg, rgba(26, 10, 58, 0.7) 0%, rgba(15, 22, 66, 0.5) 100%);
+    border-bottom: 2px solid rgba(138, 43, 226, 0.3);
+    backdrop-filter: blur(10px);
+    margin-bottom: 40px;
+    margin-top: 80px;
+}
+
+.header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Tiêu Đề Chính - Gradient Và Glow */
+.header-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00d4ff, #b24bff, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+    animation: glow 3s ease-in-out infinite;
+}
+
+/* Phụ Đề Trang */
+.header-subtitle {
+    font-size: 1.2rem;
+    color: #9d9dff;
+    font-weight: 300;
+    letter-spacing: 1px;
+}

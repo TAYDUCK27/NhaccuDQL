@@ -1,0 +1,250 @@
+/* ==========================================================================
+   GALAXY CSS - HIỆU ỨNG XOAY VÒNG NGÂN HÀ 3D HUYỀN ẢO
+   - Tạo tinh vân phát sáng nền radial-gradient lấp lánh tựa vũ trụ
+   - 3 vòng xoay đồng tâm có các hạt sao chuyển động theo góc xoay 3D bảo toàn không gian
+   - Hiệu ứng tương tác tăng tốc vòng xoay và bóng đổ khi di chuột trên thẻ sản phẩm
+   ========================================================================== */
+
+/* Khung chứa hiệu ứng vòng xoay ngân hà 3D, căn giữa tuyệt đối và tạo không gian 3D sâu */
+.galaxy-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    height: 280px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Vòng Galaxy Xoay */
+/* Các vòng tròn của dải ngân hà: Bo tròn 50%, viền mảnh màu tím bảo toàn không gian xoay 3D */
+.galaxy-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(138, 43, 226, 0.15);
+    transform-style: preserve-3d;
+    box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.1);
+}
+
+/* Vòng 1 - Bên Trong */
+/* Vòng xoay nhỏ nhất ở phía trong cùng, quay theo chiều kim đồng hồ */
+.ring-1 {
+    width: 160px;
+    height: 160px;
+    animation: rotate-ring-1 12s linear infinite;
+    z-index: 1;
+}
+
+/* Vòng 2 - Giữa */
+/* Vòng xoay ở giữa, quay ngược chiều kim đồng hồ đè lên ảnh tạo chiều sâu 3D cực thực */
+.ring-2 {
+    width: 210px;
+    height: 210px;
+    animation: rotate-ring-2 18s linear infinite reverse;
+    border: 1px solid rgba(138, 43, 226, 0.15);
+    box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.1);
+    z-index: 3;
+}
+
+/* Vòng 3 - Bên Ngoài */
+/* Vòng xoay lớn nhất ở ngoài cùng, quay chậm theo chiều kim đồng hồ */
+.ring-3 {
+    width: 260px;
+    height: 260px;
+    animation: rotate-ring-3 25s linear infinite;
+    z-index: 1;
+}
+
+/* Hạt Néu Trên Vòng */
+/* Các hạt sao lấp lánh gắn trên vòng ngân hà: Nhỏ 4px, phát sáng màu tím neon lấp lánh */
+.galaxy-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 8px #fff, 
+        0 0 15px #8a2be2,
+        0 0 25px rgba(138, 43, 226, 0.5);
+    animation: sparkle 2s ease-in-out infinite alternate;
+}
+
+.star-1 { top: 0; left: 50%; transform: translateX(-50%); }
+.star-2 { bottom: 0; left: 50%; transform: translateX(-50%); }
+.star-3 { left: 0; top: 50%; transform: translateY(-50%); }
+.star-4 { right: 0; top: 50%; transform: translateY(-50%); }
+
+/* Nebula Glow */
+/* Đám mây tinh vân (Nebula) màu tím ở tâm, nhấp nháy phát sáng lung linh huyền bí */
+.nebula-glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.2) 0%, transparent 70%);
+    filter: blur(20px);
+    border-radius: 50%;
+    animation: nebula-pulse 4s ease-in-out infinite alternate;
+}
+
+/* Animations */
+@keyframes rotate-ring-1 {
+    from { transform: rotateX(70deg) rotateY(10deg) rotateZ(0deg); }
+    to { transform: rotateX(70deg) rotateY(10deg) rotateZ(360deg); }
+}
+
+@keyframes rotate-ring-2 {
+    from { transform: rotateX(60deg) rotateY(-25deg) rotateZ(0deg); }
+    to { transform: rotateX(60deg) rotateY(-25deg) rotateZ(360deg); }
+}
+
+@keyframes rotate-ring-3 {
+    from { transform: rotateX(80deg) rotateY(15deg) rotateZ(0deg); }
+    to { transform: rotateX(80deg) rotateY(15deg) rotateZ(360deg); }
+}
+
+@keyframes sparkle {
+    0% { opacity: 0.5; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes nebula-pulse {
+    0% { transform: scale(1); opacity: 0.3; }
+    100% { transform: scale(1.3); opacity: 0.6; }
+}
+
+/* Đảm bảo hình ảnh sản phẩm nổi rõ ràng lên trên các vòng xoay galaxy phía sau */
+.card-icon img {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.4));
+}
+
+/* ==========================================================================
+   
+   PRODUCTS PAGE GALAXY PORTAL EFFECTS
+   ======================================== */
+
+/* Khung ảnh sản phẩm: Nền gradient sáng vũ trụ, ẩn các phần bị tràn viền */
+.product-image {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Tinh chỉnh khung chứa galaxy bên trong thẻ sản phẩm */
+.product-image /* Khung chứa hiệu ứng vòng xoay ngân hà 3D, căn giữa tuyệt đối và tạo không gian 3D sâu */
+/* Khung chứa hiệu ứng vòng xoay ngân hà 3D, căn giữa tuyệt đối và tạo không gian 3D sâu */
+.galaxy-container {
+    width: 280px;
+    height: 280px;
+    transform: translate(-50%, -50%) scale(0.95); /* Much larger base scale! */
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* Tăng tốc độ quay và phóng lớn các vòng ngân hà khi di chuột vào thẻ sản phẩm */
+.product-card:hover .product-image /* Khung chứa hiệu ứng vòng xoay ngân hà 3D, căn giữa tuyệt đối và tạo không gian 3D sâu */
+/* Khung chứa hiệu ứng vòng xoay ngân hà 3D, căn giữa tuyệt đối và tạo không gian 3D sâu */
+.galaxy-container {
+    transform: translate(-50%, -50%) scale(1.15); /* Expands massively to card bounds! */
+}
+
+/* Đảm bảo các hạt sao và màu sắc vòng xoay đồng bộ với trang chủ */
+.product-card:hover .product-image /* Vòng xoay nhỏ nhất ở phía trong cùng, quay theo chiều kim đồng hồ */
+/* Vòng xoay nhỏ nhất ở phía trong cùng, quay theo chiều kim đồng hồ */
+.ring-1 {
+    animation-duration: 6s;
+}
+
+.product-card:hover .product-image /* Vòng xoay ở giữa, quay ngược chiều kim đồng hồ đè lên ảnh tạo chiều sâu 3D cực thực */
+/* Vòng xoay ở giữa, quay ngược chiều kim đồng hồ đè lên ảnh tạo chiều sâu 3D cực thực */
+.ring-2 {
+    animation-duration: 9s;
+}
+
+.product-card:hover .product-image /* Vòng xoay lớn nhất ở ngoài cùng, quay chậm theo chiều kim đồng hồ */
+/* Vòng xoay lớn nhất ở ngoài cùng, quay chậm theo chiều kim đồng hồ */
+.ring-3 {
+    animation-duration: 12s;
+}
+
+.product-card:hover .product-image /* Đám mây tinh vân (Nebula) màu tím ở tâm, nhấp nháy phát sáng lung linh huyền bí */
+/* Đám mây tinh vân (Nebula) màu tím ở tâm, nhấp nháy phát sáng lung linh huyền bí */
+.nebula-glow {
+    transform: scale(1.5);
+    opacity: 0.85;
+}
+
+/* Tạo viền phát sáng dạng Neon cực kỳ đẹp cho ảnh nhạc cụ */
+.product-emoji {
+    position: relative; /* Keep relative to preserve original natural sizes */
+    z-index: 2; /* Sits in middle layer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ảnh sản phẩm thật: Tự co giãn tỉ lệ phù hợp, tích hợp bóng mờ xanh cyan lung linh và chuyển động mượt */
+.product-emoji img {
+    position: relative;
+    z-index: 2; /* Sits in middle layer */
+    transform: scale(1); /* Reduced by 20% back to original natural size */
+    transform-origin: center;
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.35));
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover /* Ảnh sản phẩm thật: Tự co giãn tỉ lệ phù hợp, tích hợp bóng mờ xanh cyan lung linh và chuyển động mượt */
+/* Ảnh sản phẩm thật: Tự co giãn tỉ lệ phù hợp, tích hợp bóng mờ xanh cyan lung linh và chuyển động mượt */
+.product-emoji img {
+    filter: drop-shadow(0 0 28px rgba(0, 212, 255, 0.75))
+            drop-shadow(0 0 12px rgba(138, 43, 226, 0.5));
+    transform: scale(1.18) rotate(3deg); /* Reduced hover scale by 20% + dynamic rotation */
+}
+
+/* ==========================================================================
+   
+   PRODUCT DETAIL MODAL GALAXY EFFECTS
+   ======================================== */
+
+/* Vùng ảnh trong modal: Nền tinh vân tím đậm huyền bí, viền tím bao bọc chắc chắn */
+.modal-image {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle, rgba(45, 0, 82, 0.9) 0%, rgba(26, 0, 51, 0.9) 100%) !important;
+    border-color: #7c3aed !important;
+}
+
+.modal-image /* Khung chứa hiệu ứng vòng xoay ngân hà 3D, căn giữa tuyệt đối và tạo không gian 3D sâu */
+/* Khung chứa hiệu ứng vòng xoay ngân hà 3D, căn giữa tuyệt đối và tạo không gian 3D sâu */
+.galaxy-container {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate(-50%, -50%) scale(0.95);
+    z-index: 1;
+}
+
+.modal-image img {
+    position: relative;
+    z-index: 3;
+    max-width: 80% !important;
+    max-height: 80% !important;
+    object-fit: contain !important;
+    filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.6))
+            drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));
+    transition: all 0.5s ease;
+}
+
+.modal-image:hover img {
+    transform: scale(1.05) rotate(2deg);
+}
+

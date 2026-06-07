@@ -1,0 +1,96 @@
+/* ==========================================================================
+   STICKERS CSS - PHÒNG CÁCH CÁC BIỂU TƯỢNG NHÃN DÁN ĐỒNG DẠNG TRÔI NỔI (FLOATING STICKERS)
+   - Định vị ngẫu nhiên 10 nhãn dán âm nhạc (nốt nhạc, đàn guitar, phi thuyền, sao tinh vân)
+   - Hoạt ảnh float kéo dài từ 6s đến 8s xen kẽ giúp các nhãn dán bay lên xuống, lắc lư nhẹ cực kỳ sinh động
+   ========================================================================== */
+
+/* Khung chứa các hình dán (stickers) trôi nổi tự do trên màn hình nền */
+/* Khung chứa các nhãn dán bay tự do phủ kín toàn bộ chiều rộng chiều cao màn hình trình duyệt */
+.floating-stickers {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Thiết lập phong cách chung cho từng nhãn dán sticker (emoji lớn, bóng mờ neon) */
+/* Định dạng chung nhãn dán: cỡ chữ lớn 3rem, bóng sáng lung linh màu tím, không cho bôi đen chữ */
+.sticker {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.6;
+    filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.5));
+    pointer-events: auto;
+    cursor: default;
+    user-select: none;
+}
+
+/* Cấu hình vị trí tuyệt đối và hoạt ảnh trôi nổi (float) với độ trễ riêng cho mỗi sticker */
+.sticker-1 {
+    top: 10%;
+    left: 5%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.sticker-2 {
+    top: 20%;
+    right: 8%;
+    animation: float 7s ease-in-out infinite 0.5s;
+}
+
+.sticker-3 {
+    top: 40%;
+    left: 12%;
+    font-size: 2.5rem;
+    animation: float 8s ease-in-out infinite 1s;
+}
+
+.sticker-4 {
+    top: 30%;
+    right: 15%;
+    animation: float 6.5s ease-in-out infinite 1.5s;
+}
+
+.sticker-5 {
+    top: 60%;
+    left: 8%;
+    font-size: 2.8rem;
+    animation: float 7.5s ease-in-out infinite 0.3s;
+}
+
+.sticker-6 {
+    top: 50%;
+    right: 10%;
+    animation: float 6s ease-in-out infinite 1s;
+}
+
+.sticker-7 {
+    top: 70%;
+    left: 15%;
+    font-size: 2.6rem;
+    animation: float 7s ease-in-out infinite 0.7s;
+}
+
+.sticker-8 {
+    top: 65%;
+    right: 12%;
+    animation: float 6.5s ease-in-out infinite 1.2s;
+}
+
+.sticker-9 {
+    top: 85%;
+    left: 20%;
+    font-size: 2.4rem;
+    animation: float 8s ease-in-out infinite 0.4s;
+}
+
+.sticker-10 {
+    top: 75%;
+    right: 18%;
+    font-size: 2.5rem;
+    animation: float 7s ease-in-out infinite 1.8s;
+}

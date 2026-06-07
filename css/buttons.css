@@ -1,0 +1,200 @@
+/* ==========================================================================
+   BUTTONS CSS - ĐỊNH NGHĨA CÁC LOẠI NÚT TƯƠNG TÁC (BUTTON SYSTEM)
+   - Các kiểu nút cơ bản, nút dải màu gradient vũ trụ phát sáng
+   - Hiệu ứng quét sáng neon, bóng đổ và thu phóng mượt mà khi di chuột
+   ========================================================================== */
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* NÚp Với Hiệu Ứng Phát Sáng */
+.btn-glow {
+    background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%);
+    color: white;
+    border: 2px solid rgba(168, 85, 247, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-glow::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    animation: none;
+}
+
+.btn-glow:hover {
+    background: linear-gradient(135deg, #d946ef 0%, #a855f7 100%);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.6), 0 0 40px rgba(217, 70, 239, 0.4);
+    transform: translateY(-2px);
+    border-color: rgba(217, 70, 239, 0.8);
+}
+
+.btn-glow:active {
+    transform: translateY(0);
+}
+
+/* NÚp Thanh Toán */
+.btn-submit {
+    background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%);
+    color: white;
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+    border: 2px solid rgba(168, 85, 247, 0.5);
+    margin-top: 20px;
+}
+
+.btn-submit:hover {
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.6), 0 0 50px rgba(217, 70, 239, 0.3);
+    transform: translateY(-2px);
+    border-color: rgba(217, 70, 239, 0.8);
+}
+
+/* NÚp Tiếp Tục Mua */
+.btn-continue-shopping {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #00d4ff, #b24bff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-continue-shopping:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+}
+
+/* Checkout Button */
+.btn-checkout {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    background: linear-gradient(135deg, #00d4ff, #b24bff);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-checkout:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+}
+
+/* Submit Checkout Button */
+.btn-submit-checkout {
+    padding: 14px;
+    background: linear-gradient(135deg, #00d4ff, #b24bff);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit-checkout:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+}
+
+/* Back to Cart Button */
+.btn-back-cart {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(138, 43, 226, 0.5);
+    color: #9d9dff;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-back-cart:hover {
+    background: rgba(138, 43, 226, 0.2);
+    color: #00d4ff;
+}
+
+/* Coupon Button */
+.coupon-btn {
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #00d4ff, #b24bff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.coupon-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+}
+
+/* Social Buttons */
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 10px;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.social-btn:hover {
+    background: rgba(138, 43, 226, 0.2);
+    border-color: #00d4ff;
+    color: #00d4ff;
+}
+
+/* Toggle Form Button */
+.toggle-form-btn {
+    background: none;
+    border: none;
+    color: #00d4ff;
+    cursor: pointer;
+    font-weight: 700;
+    transition: color 0.3s ease;
+    padding: 0;
+}
+
+.toggle-form-btn:hover {
+    color: #b24bff;
+}

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhạc Cụ - DQL Music Instruments</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/container.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/instruments.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/stickers.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/stars.css">
+    <link rel="stylesheet" href="css/sticky-navbar.css">
+    <link rel="stylesheet" href="css/meteor.css">
+    <link rel="stylesheet" href="css/galaxy.css">
+</head>
+<body>
+    <!-- Hiệu ứng thiên thạch rơi -->
+    <div class="meteor-field">
+        <span class="meteor m1"></span>
+        <span class="meteor m2"></span>
+        <span class="meteor m3"></span>
+        <span class="meteor m4"></span>
+        <span class="meteor m5"></span>
+        <span class="meteor m6"></span>
+    </div>
+    <!-- Các nhãn dán nổi - Chủ đề Galaxy -->
+    <div class="floating-stickers">
+        <div class="sticker sticker-1">🎵</div>
+        <div class="sticker sticker-2">🎶</div>
+        <div class="sticker sticker-3">🚀</div>
+        <div class="sticker sticker-4">🪐</div>
+        <div class="sticker sticker-5">🛸</div>
+        <div class="sticker sticker-6">🎸</div>
+        <div class="sticker sticker-7">🎹</div>
+        <div class="sticker sticker-8">🎤</div>
+        <div class="sticker sticker-9">🎧</div>
+        <div class="sticker sticker-10">⭐</div>
+    </div>
+
+    <!-- Thanh Điều Hướng Dính -->
+        <!-- Thanh điều hướng cố định (Sticky Navbar) có nền kính mờ trong suốt cực đẹp và tự co nhỏ khi cuộn màn hình -->
+    <nav class="sticky-navbar" id="stickyNavbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <img src="hinhanh/hinhanhlogo/logo.png" alt="DQL Music" class="navbar-brand-icon">
+            </a>
+            
+                        <!-- Menu danh sách liên kết điều hướng dạng hàng ngang chính -->
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="navbar-item">
+                    <a href="index.html" class="navbar-link active">Trang Chủ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="pages/products.html" class="navbar-link">Kho Nhạc Cụ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="pages/artists.html" class="navbar-link">Nghệ Sĩ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="pages/contact.html" class="navbar-link">Liên Hệ</a>
+                </li>
+            </ul>
+
+            <div class="navbar-actions">
+                <a href="pages/cart.html" class="navbar-action-btn" title="Giỏ hàng">🛒</a>
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Twinkling Stars Background -->
+        <!-- Khung tạo nền sao lấp lánh (sẽ được điền ngẫu nhiên 100 ngôi sao bằng Javascript trong main.js) -->
+    <div class="stars-container"></div>
+
+    <!-- Header Section -->
+        <!-- Phần đầu trang (Header Banner) giới thiệu tên thương hiệu và slogan cửa hàng -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">♫ DQL Music Instruments</h1>
+            <p class="header-subtitle">Khám phá vũ trụ âm nhạc với các nhạc cụ tuyệt vời</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+        <!-- Phần nội dung chính (Main Content Area) được bọc trong container giới hạn rộng tối đa 1200px -->
+    <main class="container">
+        <section class="instruments-section">
+            <div class="instrument-card">
+                <div class="card-icon ">
+                    <div class="galaxy-container">
+                        <div class="galaxy-ring ring-1">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-2">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-3">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="nebula-glow"></div>
+                    </div>
+                    <img src="hinhanh/hinhanhcart/pialo.png" alt="Piano">
+                </div>
+                <h2 class="card-title">Piano</h2>
+                <p class="card-description">
+                Tiếng đàn piano nhẹ nhàng len lỏi vào tâm hồn, đánh thức những cảm xúc sâu kín.                <div class="card-details">
+                    <span class="detail-item">⭐ Độ phổ biến: 25%</span>
+                    <span class="detail-item">🎵 Phạm vi: 88 phím</span>
+                </div>
+            </div>
+
+            <!-- Guitar Card -->
+            <div class="instrument-card">
+                <div class="card-icon">
+                    <div class="galaxy-container">
+                        <div class="galaxy-ring ring-1">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-2">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-3">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="nebula-glow"></div>
+                    </div>
+                    <img src="hinhanh/hinhanhcart/guitar.png" alt="Guitar">
+                </div>
+                <h2 class="card-title">Guitar</h2>
+                <p class="card-description">
+                    Nhạc cụ đa năng với âm sắc ấm áp, guitar là lựa chọn hoàn hảo cho những người yêu âm nhạc 
+                    bắt đầu hay chuyên nghiệp.
+                </p>
+                <div class="card-details">
+                    <span class="detail-item">⭐ Độ phổ biến: 90%</span>
+                    <span class="detail-item">🎵 Phạm vi: 6 dây</span>
+                </div>
+            </div>
+
+            <!-- Violin Card -->
+            <div class="instrument-card">
+                <div class="card-icon">
+                    <div class="galaxy-container">
+                        <div class="galaxy-ring ring-1">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-2">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-3">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="nebula-glow"></div>
+                    </div>
+                    <img src="hinhanh/hinhanhcart/violin.png" alt="Violin">
+                </div>
+                <h2 class="card-title">Violin</h2>
+                <p class="card-description">
+                    Đôi khi được gọi là "ngôn ngữ của linh hồn", violin tạo ra những âm thanh tinh tế 
+                    và đầy cảm xúc trong các tác phẩm cổ điển.
+                </p>
+                <div class="card-details">
+                    <span class="detail-item">⭐ Độ phổ biến: 75%</span>
+                    <span class="detail-item">🎵 Phạm vi: 4 dây</span>
+                </div>
+            </div>
+
+            <!-- Drums Card -->
+            <div class="instrument-card">
+                <div class="card-icon">
+                    <div class="galaxy-container">
+                        <div class="galaxy-ring ring-1">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-2">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-3">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="nebula-glow"></div>
+                    </div>
+                    <img src="hinhanh/hinhanhcart/drum.png" alt="Drums">
+                </div>
+                <h2 class="card-title">Drums</h2>
+                <p class="card-description">
+                    Tim nhịp của ban nhạc, trống tạo ra nhịp điệu mạnh mẽ và sôi động, 
+                    thiết yếu cho bất kỳ nhóm nhạc nào.
+                </p>
+                <div class="card-details">
+                    <span class="detail-item">⭐ Độ phổ biến: 85%</span>
+                    <span class="detail-item">🎵 Phạm vi: 5-7 bộ</span>
+                </div>
+            </div>
+
+            <!-- Flute Card -->
+            <div class="instrument-card">
+                <div class="card-icon">
+                    <div class="galaxy-container">
+                        <div class="galaxy-ring ring-1">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-2">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-3">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="nebula-glow"></div>
+                    </div>
+                    <img src="hinhanh/hinhanhcart/flute.png" alt="Flute">
+                </div>
+                <h2 class="card-title">Flute</h2>
+                <p class="card-description">
+                    Chiếc sáo với tiếng âm thanh trong sáng và cao vút, flute thường xuất hiện 
+                    trong nhạc cổ điển, jazz và âm nhạc dân gian.
+                </p>
+                <div class="card-details">
+                    <span class="detail-item">⭐ Độ phổ biến: 70%</span>
+                    <span class="detail-item">🎵 Phạm vi: 3 quãng tám</span>
+                </div>
+            </div>
+
+            <!-- Saxophone Card -->
+            <div class="instrument-card">
+                <div class="card-icon">
+                    <div class="galaxy-container">
+                        <div class="galaxy-ring ring-1">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-2">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-3">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="nebula-glow"></div>
+                    </div>
+                    <img src="hinhanh/hinhanhcart/saxophone.png" alt="Saxophone">
+                </div>
+                <h2 class="card-title">Saxophone</h2>
+                <p class="card-description">
+                    Với âm sắc mạnh mẽ và ấm áp, saxophone là trái tim của âm nhạc jazz 
+                    và thường góp mặt trong funk, soul và R&B.
+                </p>
+                <div class="card-details">
+                    <span class="detail-item">⭐ Độ phổ biến: 78%</span>
+                    <span class="detail-item">🎵 Phạm vi: 2.5 quãng tám</span>
+                </div>
+            </div>
+
+            <!-- Trumpet Card -->
+            <div class="instrument-card">
+                <div class="card-icon">
+                    <div class="galaxy-container">
+                        <div class="galaxy-ring ring-1">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-2">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-3">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="nebula-glow"></div>
+                    </div>
+                    <img src="hinhanh/hinhanhcart/trumpet.png" alt="Trumpet">
+                </div>
+                <h2 class="card-title">Trumpet</h2>
+                <p class="card-description">
+                    Chiếc kèn đồng sáng và mạnh mẽ, trumpet nổi bật trong các ban nhạc gió 
+                    và là niềm vui của các nhạc sĩ jazz.
+                </p>
+                <div class="card-details">
+                    <span class="detail-item">⭐ Độ phổ biến: 72%</span>
+                    <span class="detail-item">🎵 Phạm vi: 2.5 quãng tám</span>
+                </div>
+            </div>
+
+            <!-- Harp Card -->
+            <div class="instrument-card">
+                <div class="card-icon">
+                    <div class="galaxy-container">
+                        <div class="galaxy-ring ring-1">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-2">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="galaxy-ring ring-3">
+                            <span class="galaxy-star star-1"></span>
+                            <span class="galaxy-star star-2"></span>
+                            <span class="galaxy-star star-3"></span>
+                            <span class="galaxy-star star-4"></span>
+                        </div>
+                        <div class="nebula-glow"></div>
+                    </div>
+                    <img src="hinhanh/hinhanhcart/harp.png" alt="Harp">
+                </div>
+                <h2 class="card-title">Harp</h2>
+                <p class="card-description">
+                    Nhạc cụ cổ xưa với tiếng âm thanh thiên thần, harp mang lại vẻ trang nghiêm 
+                    và thanh lịch cho các buổi biểu diễn.
+                </p>
+                <div class="card-details">
+                    <span class="detail-item">⭐ Độ phổ biến: 45%</span>
+                    <span class="detail-item">🎵 Phạm vi: 47 dây</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+        <!-- Phần chân trang (Footer) chứa thông tin bản quyền và liên kết bổ sung, sử dụng nền kính tối -->
+    <footer class="footer">
+        <p>&copy; 2026 DQL Music Instruments | Khám phá âm nhạc không giới hạn</p>
+    </footer>
+
+        <!-- Nạp thư viện tiện ích dùng chung (Hiển thị thông báo toast, xử lý giá, giỏ hàng...) -->
+    <script src="js/utils.js"></script>
+        <!-- Nạp mã xử lý sự kiện đóng mở menu và dính thanh điều hướng khi cuộn trang -->
+    <script src="js/navbar.js"></script>
+        <!-- Nạp mã xử lý hiệu ứng sao lấp lánh nền và các hoạt ảnh cuộn trang mượt mà -->
+    <script src="js/main.js"></script>
+</body>
+</html>

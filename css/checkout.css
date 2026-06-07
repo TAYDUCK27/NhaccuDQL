@@ -1,0 +1,338 @@
+/* ==========================================================================
+   CHECKOUT CSS - GIAO DIỆN VÀ PHÒNG CÁCH TRANG THANH TOÁN (checkout.html)
+   - Bố cục 2 cột: Cột nhập thông tin giao hàng & chọn hình thức thanh toán; Cột hiển thị tóm tắt đơn hàng
+   - Form thanh toán thẻ tín dụng hiện ẩn thông minh
+   ========================================================================== */
+
+.checkout-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Biểu Mẫu Thanh Toán */
+.checkout-form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Bước Biểu Mẫu */
+.form-step {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    backdrop-filter: blur(15px);
+    transition: all 0.3s ease;
+}
+
+.form-step:hover {
+    border-color: #00d4ff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #00d4ff, #b24bff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.step-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #e0e0e0;
+    margin: 0;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+.form-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(138, 43, 226, 0.5);
+    border-radius: 8px;
+    padding: 12px 15px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: #9d9dff;
+}
+
+.form-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #00d4ff;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+}
+
+/* ========== TÜY CHỪcN GIẢI PHÁP VẬN CHUYẾN ========== */
+
+.shipping-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.shipping-option {
+    cursor: pointer;
+}
+
+.shipping-option input[type="radio"] {
+    display: none;
+}
+
+.shipping-option input[type="radio"]:checked + .shipping-card {
+    border-color: #00d4ff;
+    background: rgba(138, 43, 226, 0.2);
+}
+
+.shipping-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.shipping-card:hover {
+    background: rgba(138, 43, 226, 0.15);
+    border-color: #b24bff;
+}
+
+.shipping-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.shipping-name {
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+.shipping-price {
+    background: linear-gradient(135deg, #00d4ff, #b24bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.shipping-desc {
+    font-size: 0.85rem;
+    color: #9d9dff;
+}
+
+/* ========== TÜY CHỪcN PHƯƠNG THỨC THANH TOÁN ========== */
+
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.payment-option {
+    cursor: pointer;
+}
+
+.payment-option input[type="radio"] {
+    display: none;
+}
+
+.payment-option input[type="radio"]:checked + .payment-card {
+    border-color: #00d4ff;
+    background: rgba(138, 43, 226, 0.3);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+}
+
+.payment-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.payment-card:hover {
+    background: rgba(138, 43, 226, 0.15);
+    border-color: #b24bff;
+}
+
+.payment-icon {
+    font-size: 2.5rem;
+}
+
+.payment-name {
+    text-align: center;
+    font-weight: 600;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+}
+
+.credit-card-form {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* ========== CHECKOUT ACTIONS ========== */
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* ========== CHECKOUT SUMMARY ========== */
+
+.checkout-summary-section {
+    position: sticky;
+    top: 180px;
+    height: fit-content;
+}
+
+.checkout-summary-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    backdrop-filter: blur(15px);
+}
+
+.summary-title {
+    margin-bottom: 25px;
+}
+
+.order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.order-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.order-item-emoji {
+    font-size: 2rem;
+    min-width: 40px;
+}
+
+.order-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.order-item-name {
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+.order-item-qty {
+    font-size: 0.8rem;
+    color: #9d9dff;
+}
+
+.order-item-price {
+    text-align: right;
+    font-weight: 700;
+    color: #00d4ff;
+}
+
+.summary-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+.summary-detail.total {
+    padding: 15px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+}
+
+.summary-detail.discount .summary-value {
+    color: #00c864;
+}
+
+.security-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px;
+    background: rgba(0, 200, 100, 0.1);
+    border: 1px solid rgba(0, 200, 100, 0.3);
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #00c864;
+}
+
+.badge-icon {
+    font-size: 1.2rem;
+}

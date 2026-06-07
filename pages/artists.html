@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nghệ Sĩ - DQL Music Instruments</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/container.css">
+    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/artists.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/stickers.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/stars.css">
+    <link rel="stylesheet" href="../css/sticky-navbar.css">
+    <link rel="stylesheet" href="../css/meteor.css">
+</head>
+<body>
+    <!-- Hiệu ứng Thiên Thạch -->
+    <div class="meteor-field">
+        <span class="meteor m1"></span>
+        <span class="meteor m2"></span>
+        <span class="meteor m3"></span>
+        <span class="meteor m4"></span>
+        <span class="meteor m5"></span>
+        <span class="meteor m6"></span>
+    </div>
+    <!-- Stickers Trôi - Chủ Đề Galaxy -->
+    <div class="floating-stickers">
+        <div class="sticker sticker-1">🎵</div>
+        <div class="sticker sticker-2">🎶</div>
+        <div class="sticker sticker-3">🚀</div>
+        <div class="sticker sticker-4">🪐</div>
+        <div class="sticker sticker-5">🛸</div>
+        <div class="sticker sticker-6">🎸</div>
+        <div class="sticker sticker-7">🎹</div>
+        <div class="sticker sticker-8">🎤</div>
+        <div class="sticker sticker-9">🎧</div>
+        <div class="sticker sticker-10">⭐</div>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+        <!-- Thanh điều hướng cố định (Sticky Navbar) có nền kính mờ trong suốt cực đẹp và tự co nhỏ khi cuộn màn hình -->
+    <nav class="sticky-navbar" id="stickyNavbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-brand">
+                <img src="../hinhanh/hinhanhlogo/logo.png" alt="DQL Music" class="navbar-brand-icon">
+            </a>
+            
+                        <!-- Menu danh sách liên kết điều hướng dạng hàng ngang chính -->
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="navbar-item">
+                    <a href="../index.html" class="navbar-link">Trang Chủ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="products.html" class="navbar-link">Kho Nhạc Cụ</a>
+                </li>
+                <li class="navbar-item">
+
+                    <a href="artists.html" class="navbar-link active">Nghệ Sĩ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="contact.html" class="navbar-link">Liên Hệ</a>
+                </li>
+            </ul>
+
+            <div class="navbar-actions">
+                <a href="cart.html" class="navbar-action-btn" title="Giỏ hàng">🛒</a>
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Nền Sao Lấp Láy -->
+        <!-- Khung tạo nền sao lấp lánh (sẽ được điền ngẫu nhiên 100 ngôi sao bằng Javascript trong main.js) -->
+    <div class="stars-container"></div>
+
+    <!-- Tiêu Đề Trang -->
+        <!-- Phần đầu trang (Header Banner) giới thiệu tên thương hiệu và slogan cửa hàng -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">🎤 Nghệ Sĩ Nổi Bật</h1>
+            <p class="header-subtitle">Gặp gỡ những nhạc sĩ tài năng từ khắp nơi</p>
+        </div>
+    </header>
+
+    <!-- Nội Dung Chính -->
+        <!-- Phần nội dung chính (Main Content Area) được bọc trong container giới hạn rộng tối đa 1200px -->
+    <main class="container">
+        <!-- Danh Sách Nghệ Sĩ -->
+        <section class="artists-section">
+            <!-- Nghệ Sĩ 1 -->
+            <div class="artist-card glass-card">
+                <div class="artist-avatar"><img src="../hinhanh/hinhanhartist/taiduc.png" alt="Tài Đức"></div>
+                <h2 class="artist-name">Tài Đức</h2>
+                <p class="artist-specialty">Piano Chuyên Gia</p>
+                <p class="artist-bio">Nhạc sĩ Piano nổi tiếng với những bản Concerto kinh điển</p>
+            </div>
+
+            <!-- Artist 2 -->
+            <div class="artist-card glass-card">
+                <div class="artist-avatar"><img src="../hinhanh/hinhanhartist/quocanhguitar.png" alt="Quốc Anh"></div>
+                <h2 class="artist-name">Quốc Anh</h2>
+                <p class="artist-specialty">Guitar Acoustic</p>
+                <p class="artist-bio">Sáng tác nhạc độc lập với phong cách hiện đại mặn mà</p>
+            </div>
+
+            <!-- Artist 3 -->
+            <div class="artist-card glass-card">
+                <div class="artist-avatar"><img src="../hinhanh/hinhanhartist/quocanh.png" alt="Quốc Anh"></div>
+                <h2 class="artist-name">Quốc Anh</h2>
+                <p class="artist-specialty">Violist</p>
+                <p class="artist-bio">Biểu diễn Violin với tiếng nồng nàn và đầy cảm xúc</p>
+            </div>
+
+            <!-- Artist 4 -->
+            <div class="artist-card glass-card">
+                <div class="artist-avatar"><img src="../hinhanh/hinhanhartist/quocanhdanhtrong.png" alt="Quốc Anh"></div>
+                <h2 class="artist-name">Quốc Anh</h2>
+                <p class="artist-specialty">Drummer Chuyên Nghiệp</p>
+                <p class="artist-bio">Nhạc trưởng trống với nhịp đập năng động và chính xác</p>
+            </div>
+
+            <!-- Artist 5 -->
+            <div class="artist-card glass-card">
+                <div class="artist-avatar"><img src="../hinhanh/hinhanhartist/quocanhsaxophone.png" alt="Quốc Anh"></div>
+                <h2 class="artist-name">Quốc Anh</h2>
+                <p class="artist-specialty">Saxophone Player</p>
+                <p class="artist-bio">Chuyên biểu diễn nhạc Jazz với âm sắc mê hoặc</p>
+            </div>
+
+            <!-- Artist 6 -->
+            <div class="artist-card glass-card">
+                <div class="artist-avatar"><img src="../hinhanh/hinhanhartist/quocanhcasi.png" alt="Quốc Anh"></div>
+                <h2 class="artist-name">Quốc Anh</h2>
+                <p class="artist-specialty">Vocal/Ca Sĩ</p>
+                <p class="artist-bio">Giọng ca nữ với phạm vi 3 quãng tám mượt mà</p>
+            </div>
+
+            <!-- Artist 7 -->
+            <div class="artist-card glass-card">
+                <div class="artist-avatar"><img src="../hinhanh/hinhanhartist/quocanhharp.png" alt="Quốc Anh"></div>
+                <h2 class="artist-name">Quốc Anh</h2>
+                <p class="artist-specialty">Nhạc Sĩ Sáng Tác</p>
+                <p class="artist-bio">Tác giả nhiều bản nhạc ngoài trời đạt giải quốc tế</p>
+            </div>
+
+            <!-- Artist 8 -->
+            <div class="artist-card glass-card">
+                <div class="artist-avatar"><img src="../hinhanh/hinhanhartist/quocanhtrumpet.png" alt="Quốc Anh"></div>
+                <h2 class="artist-name">Quốc Anh</h2>
+                <p class="artist-specialty">Trumpet Master</p>
+                <p class="artist-bio">Trumpet Player nổi tiếng với các biểu diễn orchestral</p>
+            </div>
+
+            <!-- Artist 9 -->
+            <div class="artist-card glass-card">
+                <div class="artist-avatar"><img src="../hinhanh/hinhanhartist/quocanhthoiken.png" alt="Quốc Anh"></div>
+                <h2 class="artist-name">Quốc Anh</h2>
+                <p class="artist-specialty">Flute Performer</p>
+                <p class="artist-bio">Nghệ sĩ flute với kỹ thuật độc đáo và tinh tế</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+        <!-- Phần chân trang (Footer) chứa thông tin bản quyền và liên kết bổ sung, sử dụng nền kính tối -->
+    <footer class="footer">
+        <p>&copy; 2026 DQL Music Instruments | Khám phá âm nhạc không giới hạn</p>
+    </footer>
+
+        <!-- Nạp thư viện tiện ích dùng chung (Hiển thị thông báo toast, xử lý giá, giỏ hàng...) -->
+    <script src="../js/utils.js"></script>
+        <!-- Nạp mã xử lý sự kiện đóng mở menu và dính thanh điều hướng khi cuộn trang -->
+    <script src="../js/navbar.js"></script>
+        <!-- Nạp mã xử lý hiệu ứng sao lấp lánh nền và các hoạt ảnh cuộn trang mượt mà -->
+    <script src="../js/main.js"></script>
+
+    <!-- ===== STICKY NAVBAR JAVASCRIPT ===== -->
+    <script src="../js/artists.js"></script>
+</body>
+</html>
+
+

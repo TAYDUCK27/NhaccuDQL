@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán - DQL Music Instruments</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/container.css">
+    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/stickers.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/stars.css">
+    <link rel="stylesheet" href="../css/sticky-navbar.css">
+    <link rel="stylesheet" href="../css/meteor.css">
+</head>
+<body>
+    <!-- Hiệu ứng Thiên Thạch -->
+    <div class="meteor-field">
+        <span class="meteor m1"></span>
+        <span class="meteor m2"></span>
+        <span class="meteor m3"></span>
+        <span class="meteor m4"></span>
+        <span class="meteor m5"></span>
+        <span class="meteor m6"></span>
+    </div>
+    <!-- Stickers Trôi - Chủ Đề Galaxy -->
+    <div class="floating-stickers">
+        <div class="sticker sticker-1">🎵</div>
+        <div class="sticker sticker-2">🎶</div>
+        <div class="sticker sticker-3">🚀</div>
+        <div class="sticker sticker-4">🪐</div>
+        <div class="sticker sticker-5">🛸</div>
+        <div class="sticker sticker-6">🎸</div>
+        <div class="sticker sticker-7">🎹</div>
+        <div class="sticker sticker-8">🎤</div>
+        <div class="sticker sticker-9">🎧</div>
+        <div class="sticker sticker-10">⭐</div>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+        <!-- Thanh điều hướng cố định (Sticky Navbar) có nền kính mờ trong suốt cực đẹp và tự co nhỏ khi cuộn màn hình -->
+    <nav class="sticky-navbar" id="stickyNavbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-brand">
+                <img src="../hinhanh/hinhanhlogo/logo.png" alt="DQL Music" class="navbar-brand-icon">
+            </a>
+            
+                        <!-- Menu danh sách liên kết điều hướng dạng hàng ngang chính -->
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="navbar-item">
+                    <a href="../index.html" class="navbar-link">Trang Chủ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="products.html" class="navbar-link">Kho Nhạc Cụ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="artists.html" class="navbar-link">Nghệ Sĩ</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="contact.html" class="navbar-link">Liên Hệ</a>
+                </li>
+            </ul>
+
+            <div class="navbar-actions">
+                <a href="cart.html" class="navbar-action-btn" title="Giỏ hàng">🛒</a>
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Nền Sao Lấp Láy -->
+        <!-- Khung tạo nền sao lấp lánh (sẽ được điền ngẫu nhiên 100 ngôi sao bằng Javascript trong main.js) -->
+    <div class="stars-container"></div>
+
+    <!-- Tiêu Đề Trang -->
+        <!-- Phần đầu trang (Header Banner) giới thiệu tên thương hiệu và slogan cửa hàng -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">💳 Thanh Toán Đơn Hàng</h1>
+            <p class="header-subtitle">Hoàn tất thông tin giao hàng của bạn</p>
+        </div>
+    </header>
+
+    <!-- Nội Dung Chính -->
+        <!-- Phần nội dung chính (Main Content Area) được bọc trong container giới hạn rộng tối đa 1200px -->
+    <main class="container">
+                <!-- Bố cục thanh toán: biểu mẫu giao hàng bên trái và thông tin tóm tắt đơn hàng bên phải -->
+        <div class="checkout-wrapper">
+            <!-- Biểu Mẫu Thanh Toán -->
+            <div class="checkout-form-section">
+                <form class="checkout-form" id="checkoutForm">
+                    <!-- Thông Tin Giao Hàng -->
+                    <div class="form-step">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h2 class="step-title">📍 Thông Tin Giao Hàng</h2>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Họ và Tên</label>
+                                <input type="text" class="form-input" placeholder="Nhập họ tên đầy đủ" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Số Điện Thoại</label>
+                                <input type="tel" class="form-input" placeholder="0987 654 321" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" placeholder="email@example.com" required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">Địa Chỉ Giao Hàng</label>
+                            <input type="text" class="form-input" placeholder="Số nhà, đường phố, phường/xã, quận/huyện, thành phố" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Thành Phố/Tỉnh</label>
+                                <input type="text" class="form-input" placeholder="Hà Nội, TP. Hồ Chí Minh..." required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Mã Zip</label>
+                                <input type="text" class="form-input" placeholder="100000" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chọn Phương Thức Thanh Toán -->
+                    <div class="form-step">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h2 class="step-title">💰 Chọn Phương Thức Thanh Toán</h2>
+                        </div>
+
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="cod" checked>
+                                <div class="payment-card">
+                                    <span class="payment-icon">🏠</span>
+                                    <span class="payment-name">Thanh Toán Khi Nhận Hàng</span>
+                                </div>
+                            </label>
+
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="wallet">
+                                <div class="payment-card">
+                                    <span class="payment-icon">👛</span>
+                                    <span class="payment-name">Ví Điện Tử / Thanh Toán Di Động</span>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit-checkout">
+                            <span class="btn-glow"></span>
+                            ✨ Hoàn Tất Thanh Toán
+                        </button>
+                        <a href="cart.html" class="btn-back-cart">⬅️ Quay Lại Giỏ Hàng</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tóm Tắt Đơn Hàng -->
+            <div class="checkout-summary-section">
+                <div class="checkout-summary-card">
+                    <h2 class="summary-title">📦 Tóm Tắt Đơn Hàng</h2>
+
+                    <!-- Order Items -->
+                    <div class="order-items" id="orderItemsContainer">
+                        <!-- Items will be loaded from cart -->
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <!-- Summary Details -->
+                    <div class="summary-detail">
+                        <span class="summary-label">Tổng thanh toán:</span>
+                        <span class="summary-value-total" id="totalPayment">0 ₫</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+        <!-- Phần chân trang (Footer) chứa thông tin bản quyền và liên kết bổ sung, sử dụng nền kính tối -->
+    <footer class="footer">
+        <p>&copy; 2026 DQL Music Instruments | Khám phá âm nhạc không giới hạn</p>
+    </footer>
+
+        <!-- Nạp thư viện tiện ích dùng chung (Hiển thị thông báo toast, xử lý giá, giỏ hàng...) -->
+    <script src="../js/utils.js"></script>
+        <!-- Nạp mã xử lý sự kiện đóng mở menu và dính thanh điều hướng khi cuộn trang -->
+    <script src="../js/navbar.js"></script>
+        <!-- Nạp mã xử lý hiệu ứng sao lấp lánh nền và các hoạt ảnh cuộn trang mượt mà -->
+    <script src="../js/main.js"></script>
+        <!-- Nạp mã xử lý thanh toán: liệt kê đơn hàng gọn, ẩn hiện form điền thẻ tín dụng và submit đặt hàng -->
+    <script src="../js/checkout.js"></script>
+</body>
+</html>
+
+

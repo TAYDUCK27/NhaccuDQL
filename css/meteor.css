@@ -1,0 +1,113 @@
+/* ==========================================================================
+   METEOR CSS - HIỆU ỨNG SAO BĂNG RƠI CHÉO GÓC CONG MỀM MẠI
+   - Tạo ra các vệt sáng thiên thạch dài lướt nhanh qua màn hình nền
+   - Sử dụng hoạt ảnh keyframes dịch chuyển 3D kết hợp tăng góc nghiêng để tạo đường bay cong tự nhiên
+   ========================================================================== */
+
+/* Vùng trời để hiển thị hoạt ảnh sao băng rơi chéo lung linh */
+.meteor-field {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Định dạng một vệt sao băng: Vệt dài 260px cực mỏng, dải màu chuyển sắc sang trắng, phát sáng bóng mờ neon xanh dương */
+.meteor {
+  position:absolute;
+
+  width:260px;
+  height:1px;
+
+  border-radius:999px;
+
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.08),
+    rgba(0,255,255,.8),
+    white
+  );
+
+  filter:
+    blur(.2px)
+    drop-shadow(0 0 4px #00ffff)
+    drop-shadow(0 0 10px #00ffff);
+
+  opacity:0;
+
+  animation:meteorCurve linear infinite;
+}
+
+/* Tọa độ xuất phát và thời gian rơi cụ thể cho từng ngôi sao băng (m1 đến m6) */
+.m1{
+  top:-100px;
+  left:-300px;
+  animation-duration:1.6s;
+  animation-delay:0s;
+}
+
+.m2{
+  top:50px;
+  left:-500px;
+  animation-duration:1.8s;
+  animation-delay:.3s;
+}
+
+.m3{
+  top:180px;
+  left:-700px;
+  animation-duration:2s;
+  animation-delay:.7s;
+}
+
+.m4{
+  top:320px;
+  left:-450px;
+  animation-duration:1.7s;
+  animation-delay:1s;
+}
+
+.m5{
+  top:480px;
+  left:-650px;
+  animation-duration:2.1s;
+  animation-delay:1.3s;
+}
+
+.m6{
+  top:650px;
+  left:-850px;
+  animation-duration:2.3s;
+  animation-delay:1.7s;
+}
+
+/* Định nghĩa hoạt ảnh meteorCurve mô tả đường bay chéo và xoay nhẹ của sao băng */
+@keyframes meteorCurve{
+  0%{
+    transform:
+      translate(-200px,-100px)
+      rotate(28deg);
+
+    opacity:0;
+  }
+
+  10%{
+    opacity:1;
+  }
+
+  50%{
+    transform:
+      translate(700px,250px)
+      rotate(36deg);
+  }
+
+  100%{
+    transform:
+      translate(1800px,950px)
+      rotate(44deg);
+
+    opacity:0;
+  }
+}

@@ -1,0 +1,38 @@
+/* ==========================================================================
+   BASE CSS - THIẾT LẬP CƠ BẢN VÀ ĐỊNH NGHĨA HỆ THỐNG TRANG WEB
+   - Đặt lại (reset) lề và đệm của trình duyệt về 0
+   - Thiết lập font chữ Segoe UI và nền tối gradient không gian vũ trụ cực đẹp
+   - Khung chứa các ngôi sao (stars-container) cố định toàn trang
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cài đặt chung cho thẻ <html> giúp hành vi cuộn trang mượt mà */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Định nghĩa thẻ <body> với nền màu gradient vũ trụ tối chuyển động cực đẹp */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a0a3a 50%, #0f1642 100%);
+    color: #e0e0e0;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Vùng chứa các ngôi sao nhỏ lấp lánh cố định trên màn hình nền */
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}

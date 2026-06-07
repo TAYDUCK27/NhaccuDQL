@@ -1,0 +1,346 @@
+/* ==========================================================================
+   STICKY NAVBAR CSS - THANH ĐIỀU HƯỚNG CỐ ĐỊNH, DÍNH VÀ BIẾN ĐỔI KHI CUỘN TRANG
+   - Thiết kế nền kính mờ acrylic trong suốt phối màu tối sang trọng
+   - Trạng thái cuộn xuống (.scrolled) thu nhỏ thanh đệm và tăng độ mờ đục để nhìn rõ chữ
+   - Các liên kết trang có đường line tím/xanh dạ quang trượt ngang khi hover hoặc active cực chất
+   ========================================================================== */
+
+/* Thanh điều hướng chính: Cố định vị trí trên đầu trang web, nền kính mờ và viền dưới phát sáng */
+.sticky-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(15, 22, 66, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 2px solid rgba(138, 43, 226, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+}
+
+/* Thanh Điều Hưởng Khi Cuộn */
+.sticky-navbar.scrolled {
+  background: rgba(15, 22, 66, 0.9);
+  border-bottom-color: rgba(138, 43, 226, 0.6);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  padding: 0.8rem 2rem;
+}
+
+/* Container Thanh Điều Hưởng */
+/* Căn lề các thành phần trong thanh điều hướng giãn đều hai bên */
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Thương Hiệu Logo */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #a855f7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #d946ef;
+  filter: drop-shadow(0 0 12px rgba(217, 70, 239, 0.6));
+}
+
+.navbar-brand-icon {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 100px;
+  margin: -32px 0;
+  position: relative;
+  z-index: 1 ;
+}
+
+.navbar-brand-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Menu Điều Hưởng */
+/* Khối menu chứa các liên kết: Hiển thị dạng hàng ngang nằm ngang */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  justify-content: center;
+  list-style: none;
+}
+
+.navbar-item {
+  position: relative;
+}
+
+/* Liên Kết Điều Hưởng */
+/* Các liên kết điều hướng: Chữ màu nhạt, in đậm vừa phải, hỗ trợ gạch chân hiệu ứng lung linh khi hover */
+.navbar-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Glow underline effect on hover */
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #a855f7, transparent);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.7);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #a855f7;
+  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));
+  transform: translateY(-2px);
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* Liên kết của trang hiện tại đang mở: Tô chữ màu tím dạ quang in đậm hơn */
+.navbar-link.active {
+  color: #a855f7;
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.7));
+}
+
+.navbar-link.active::after {
+  width: 100%;
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.8);
+}
+
+/* Right side actions */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.navbar-action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #a855f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.navbar-action-btn:hover {
+  background: rgba(168, 85, 247, 0.3);
+  border-color: rgba(168, 85, 247, 0.7);
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
+  transform: scale(1.05);
+}
+
+/* Mobile menu toggle */
+/* Nút menu Hamburger ẩn hiện trên điện thoại: Dạng 3 vạch ngang màu trắng tự tạo bằng CSS */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #a855f7;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.navbar-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  /* Thanh điều hướng chính: Cố định vị trí trên đầu trang web, nền kính mờ và viền dưới phát sáng */
+.sticky-navbar {
+    padding: 0.8rem 1rem;
+  }
+
+  /* Căn lề các thành phần trong thanh điều hướng giãn đều hai bên */
+.navbar-container {
+    gap: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .navbar-brand-icon {
+    font-size: 1.2rem;
+  }
+
+  /* Khối menu chứa các liên kết: Hiển thị dạng hàng ngang nằm ngang */
+.navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(15, 22, 66, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.3);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    gap: 0;
+    padding: 0;
+  }
+
+  .navbar-menu.active {
+    max-height: 400px;
+    padding: 1rem 0;
+  }
+
+  .navbar-item {
+    width: 100%;
+  }
+
+  /* Các liên kết điều hướng: Chữ màu nhạt, in đậm vừa phải, hỗ trợ gạch chân hiệu ứng lung linh khi hover */
+.navbar-link {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-link:hover,
+  /* Liên kết của trang hiện tại đang mở: Tô chữ màu tím dạ quang in đậm hơn */
+.navbar-link.active {
+    border-left-color: #a855f7;
+    background: rgba(168, 85, 247, 0.1);
+  }
+
+  .navbar-link::after {
+    display: none;
+  }
+
+  /* Nút menu Hamburger ẩn hiện trên điện thoại: Dạng 3 vạch ngang màu trắng tự tạo bằng CSS */
+.navbar-toggle {
+    display: flex;
+    order: 3;
+  }
+
+  .navbar-actions {
+    order: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Thanh điều hướng chính: Cố định vị trí trên đầu trang web, nền kính mờ và viền dưới phát sáng */
+.sticky-navbar {
+    padding: 0.6rem 0.8rem;
+  }
+
+  /* Căn lề các thành phần trong thanh điều hướng giãn đều hai bên */
+.navbar-container {
+    gap: 0.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 0.9rem;
+  }
+
+  /* Các liên kết điều hướng: Chữ màu nhạt, in đậm vừa phải, hỗ trợ gạch chân hiệu ứng lung linh khi hover */
+.navbar-link {
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .navbar-action-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Glassmorphism enhancement */
+.sticky-navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Smooth animation when navbar appears */
+@keyframes navbarSticky {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Thanh điều hướng chính: Cố định vị trí trên đầu trang web, nền kính mờ và viền dưới phát sáng */
+.sticky-navbar {
+  animation: navbarSticky 0.3s ease;
+}
