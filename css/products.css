@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    PRODUCTS CSS - TOÀN BỘ PHONG CÁCH CHO TRANG KHO SẢN PHẨM (products.html)
    - Thiết kế bộ khung 2 cột: Sidebar lọc chuyên sâu bên trái & Lưới danh sách bên phải
    - Phong cách Sidebar gồm: Chọn danh mục nhạc cụ, nhập khoảng giá và tích chọn xếp hạng sao
@@ -329,10 +329,6 @@
     max-width: 85%;
     max-height: 85%;
     object-fit: contain;
-}
-
-.product-card:hover .product-emoji {
-    transform: scale(1.2) rotate(10deg);
 }
 
 /* ============================================
@@ -680,11 +676,66 @@
     }
 
     .products-sidebar {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
     }
 
-    .sidebar-section,
+    .sidebar-section#categories-section {
+        background: transparent;
+        border: none;
+        padding: 0;
+        backdrop-filter: none;
+    }
+
+    .sidebar-section#categories-section .section-title {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        padding-bottom: 5px;
+        border-bottom: none;
+    }
+
+    .category-list {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 10px;
+        padding: 5px 2px 12px 2px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .category-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category-item {
+        flex: 0 0 auto;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(138, 43, 226, 0.3);
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+    }
+
+    .category-item:hover {
+        transform: none;
+    }
+
+    .category-item.active {
+        background: rgba(138, 43, 226, 0.4);
+        border-color: #00d4ff;
+        color: #00d4ff;
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.25);
+    }
+
+    .category-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .sidebar-section:not(#categories-section),
     .filter-section {
         padding: 15px;
     }

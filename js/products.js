@@ -119,15 +119,7 @@ document.getElementById('modalAddCart')?.addEventListener('click', () => {
 });
 
 /**
- * 5. Bật/tắt trạng thái nút Yêu Thích trong Modal (Modal Wishlist Toggle):
- * Thay đổi ký tự trái tim và văn bản của nút bấm từ "❤️ Yêu Thích" sang "🤍 Bỏ Yêu Thích" và ngược lại.
- */
-document.getElementById('modalWishlist')?.addEventListener('click', (e) => {
-    e.target.textContent = e.target.textContent === '❤️ Yêu Thích' ? '🤍 Bỏ Yêu Thích' : '❤️ Yêu Thích';
-});
-
-/**
- * 6. Sự kiện click thêm sản phẩm trực tiếp từ nút "Thêm vào giỏ" trên thẻ sản phẩm:
+ * 5. Sự kiện click thêm sản phẩm trực tiếp từ nút "Thêm vào giỏ" trên thẻ sản phẩm:
  * Lọc sự kiện click trúng nút có class '.btn-add-cart'.
  */
 document.addEventListener('click', (e) => {
@@ -141,16 +133,7 @@ document.addEventListener('click', (e) => {
 });
 
 /**
- * 7. Bật/tắt nút yêu thích hình trái tim trực tiếp trên thẻ sản phẩm:
- * Chuyển trạng thái icon trái tim từ đỏ '❤️' sang trắng '🤍' và ngược lại.
- */
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.btn-wishlist')) return;
-    e.target.textContent = e.target.textContent === '❤️' ? '🤍' : '❤️';
-});
-
-/**
- * 8. Lọc sản phẩm theo danh mục (Category Filter Active Toggle & Product Filtering):
+ * 6. Lọc sản phẩm theo danh mục (Category Filter Active Toggle & Product Filtering):
  * - Đánh dấu chuyên mục được chọn bằng cách xóa class active ở các danh mục khác và thêm active vào danh mục hiện tại.
  * - Lọc và hiển thị các sản phẩm thuộc danh mục tương ứng trong danh sách sản phẩm.
  */
@@ -202,7 +185,7 @@ document.addEventListener('click', (e) => {
 });
 
 /**
- * 9. Sắp xếp danh sách sản phẩm (Sort select event):
+ * 7. Sắp xếp danh sách sản phẩm (Sort select event):
  * Lắng nghe sự kiện người dùng thay đổi tiêu chí sắp xếp sản phẩm (Giá tăng dần, giảm dần...).
  */
 document.querySelector('.sort-select')?.addEventListener('change', (e) => {

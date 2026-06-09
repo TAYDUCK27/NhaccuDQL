@@ -153,7 +153,7 @@
 .product-card:hover .product-image /* Khung chứa hiệu ứng vòng xoay ngân hà 3D, căn giữa tuyệt đối và tạo không gian 3D sâu */
 /* Khung chứa hiệu ứng vòng xoay ngân hà 3D, căn giữa tuyệt đối và tạo không gian 3D sâu */
 .galaxy-container {
-    transform: translate(-50%, -50%) scale(1.15); /* Expands massively to card bounds! */
+    transform: translate(-50%, -50%) scale(0.95); /* Expands massively to card bounds! */
 }
 
 /* Đảm bảo các hạt sao và màu sắc vòng xoay đồng bộ với trang chủ */
@@ -175,12 +175,7 @@
     animation-duration: 12s;
 }
 
-.product-card:hover .product-image /* Đám mây tinh vân (Nebula) màu tím ở tâm, nhấp nháy phát sáng lung linh huyền bí */
-/* Đám mây tinh vân (Nebula) màu tím ở tâm, nhấp nháy phát sáng lung linh huyền bí */
-.nebula-glow {
-    transform: scale(1.5);
-    opacity: 0.85;
-}
+
 
 /* Tạo viền phát sáng dạng Neon cực kỳ đẹp cho ảnh nhạc cụ */
 .product-emoji {
@@ -194,20 +189,14 @@
 /* Ảnh sản phẩm thật: Tự co giãn tỉ lệ phù hợp, tích hợp bóng mờ xanh cyan lung linh và chuyển động mượt */
 .product-emoji img {
     position: relative;
-    z-index: 2; /* Sits in middle layer */
-    transform: scale(1); /* Reduced by 20% back to original natural size */
+    z-index: 2;
+    transform: scale(1);
     transform-origin: center;
     filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.35));
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.product-card:hover /* Ảnh sản phẩm thật: Tự co giãn tỉ lệ phù hợp, tích hợp bóng mờ xanh cyan lung linh và chuyển động mượt */
-/* Ảnh sản phẩm thật: Tự co giãn tỉ lệ phù hợp, tích hợp bóng mờ xanh cyan lung linh và chuyển động mượt */
-.product-emoji img {
-    filter: drop-shadow(0 0 28px rgba(0, 212, 255, 0.75))
-            drop-shadow(0 0 12px rgba(138, 43, 226, 0.5));
-    transform: scale(1.18) rotate(3deg); /* Reduced hover scale by 20% + dynamic rotation */
-}
+
 
 /* ==========================================================================
    

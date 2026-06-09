@@ -90,18 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Sử dụng hàm cubic-bezier để tạo gia tốc chuyển động tự nhiên, mượt mà khi phóng to hay bóng đổ thay đổi
             this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
         });
-
-        // Lắng nghe sự kiện người dùng click chuột vào thẻ nhạc cụ
-        card.addEventListener('click', function () {
-            // Áp dụng animation có tên 'pulse' (xung tích động) kéo dài 0.6 giây
-            this.style.animation = 'pulse 0.6s ease-out';
-            
-            // Đợi sau 0.6 giây (600 mili-giây) khi animation kết thúc thì gỡ bỏ thuộc tính animation
-            // Việc gỡ bỏ này giúp chúng ta có thể kích hoạt lại hiệu ứng này ở những lần click tiếp theo
-            setTimeout(() => {
-                this.style.animation = '';
-            }, 600);
-        });
     });
 });
 
